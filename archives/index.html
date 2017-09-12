@@ -225,7 +225,59 @@
     <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                            dotnet-core系列文章二：VSCode教學
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-09-12T08:11:27+08:00">
+	
+		    9月 12, 2017
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/Blog/categories/dotnet-core/">dotnet core</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><p>上一篇講到開發dotnet core相關程式，論語說「工欲善其事，必先利其器」，相當然爾，熟悉開發工具這件事情直接影響你的開發產能。因筆者現況，公司配的桌機跟自己的筆電配備上有落差，以不耗系統資源的考量下，下定決心將「Visual Studio Code」作為首選開發工具。</p>
+<p>簡單敘述一下我這邊的環境</p>
+<ul>
+<li>VsCode：使用最新版本1.16.0</li>
+<li>作業系統：Windows 10</li>
+</ul>
+<blockquote>
+<p>以下示範內容皆為Windows環境下的快捷鍵及設定</p>
+</blockquote>
+<h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><p>Visual Studio Code是<a href="https://electron.atom.io/" target="_blank" rel="external">Electron</a>建置而成，它基本上核心就是chrome v8引擎，可以想像成是在使用瀏覽器，接著筆者會以不同功能取向為分類準則，分門別類介紹目前使用上必須記得快捷鍵及小技巧。</p>
+                    
+                        <a href="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -243,42 +295,24 @@
     	
     </time>
     
+        <span>分類 </span>
+        
+    <a class="category-link" href="/Blog/categories/dotnet-core/">dotnet core</a>
+
+
+    
 </div>
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><p>目前微軟於「2017/08/14」正式發佈dotnet core2.0.0後，實作API數比版本1足足多了兩倍之多，是該進場的時候了。</p>
 <p>身為ASP.NET開發者，以往都會限制於IIS Web Server才能架站，dotnet core本身跨平台的特性，且宿主不限制於IIS Web Server，加上僅開啟Visual Studio Code就可開發C#相關程式(設備配備不好的情況下超適用)，上述種種因素，是該投資時間研究dotnet core的時候了。</p>
-<h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><p>首先，需至Microsoft Download網站下載SDK。</p>
-<p><a href="https://www.microsoft.com/net/core" target="_blank" rel="external">dotnet core SDK</a></p>
-<p>安裝完畢後，請打開Command line輸入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet --version</div></pre></td></tr></table></figure></p>
-<p>測試是否正常執行，若安裝成功，會回傳<code>2.0.0</code></p>
-<p>目前官方預設範本有</p>
-<ul>
-<li>Console Application</li>
-<li>ASP.NET Core MVC</li>
-<li>ASP.NET Core WebAPI</li>
-<li>其他</li>
-</ul>
-<p>詳細範本種類可參考<a href="https://docs.microsoft.com/zh-tw/dotnet/core/tools/dotnet-new" target="_blank" rel="external">dotnet core cli-new命令</a></p>
-<p>接著，我們來建一個實際的專案，使用console範本作示範。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet new console -o helloworldapp</div></pre></td></tr></table></figure>
-<p>上述指令中，最後結為尾為「專案名稱」，其中<code>-o</code>表示自動以「專案名稱」建立資料夾。</p>
-<p>建立完成後，參考以下指令來執行程式碼<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//進入該資料夾</div><div class="line">cd helloworldapp</div><div class="line">//執行程式</div><div class="line">dotnet run</div></pre></td></tr></table></figure></p>
-<p>就可以看到以下執行結果，參考</p>
-<img src="/Blog/2017/09/11/dotnet-core系列文章一：安裝/dotnet_core_new_console_run.jpg" alt="[dotnet_run]" title="[dotnet_run]">
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>dotnet core環境安裝上簡單，dotnet cli的很直覺的操作性，整體來說，本身是寫.net framework相關程式則不會有什麼學習上的障礙，那你還等什麼呢？</p>
-
                     
+                        <a href="/Blog/2017/09/11/dotnet-core系列文章一：安裝/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
                         
-                    
-                    
-                        <p>
-                            <a href="/Blog/2017/09/11/dotnet-core系列文章一：安裝/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -377,7 +411,36 @@
                                 
                             </span>
                         </span>
-                        <div class="media-content hide-xs font-merryweather"></div>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><p>目前微軟於「2017/08/14」正式發佈dotnet core2.0.0後，實作API數比版本1足足多了兩倍之多，是該進場的時候了。</p>
+<p>身為ASP.NET開發者，以往都會限制於IIS Web Server才能架站，dotnet core本身跨平台的特性，且宿主不限制於IIS Web Server，加上僅開啟Visual Studio Code就可開發C#相關程式(設備配備不好的情況下超適用)，上述種種因素，是該投資時間研究dotnet core的時候了。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                            <h3 class="media-heading">dotnet-core系列文章二：VSCode教學</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年9月12日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><p>上一篇講到開發dotnet core相關程式，論語說「工欲善其事，必先利其器」，相當然爾，熟悉開發工具這件事情直接影響你的開發產能。因筆者現況，公司配的桌機跟自己的筆電配備上有落差，以不耗系統資源的考量下，下定決心將「Visual Studio Code」作為首選開發工具。</p>
+<p>簡單敘述一下我這邊的環境</p>
+<ul>
+<li>VsCode：使用最新版本1.16.0</li>
+<li>作業系統：Windows 10</li>
+</ul>
+<blockquote>
+<p>以下示範內容皆為Windows環境下的快捷鍵及設定</p>
+</blockquote>
+<h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><p>Visual Studio Code是<a href="https://electron.atom.io/" target="_blank" rel="external">Electron</a>建置而成，它基本上核心就是chrome v8引擎，可以想像成是在使用瀏覽器，接著筆者會以不同功能取向為分類準則，分門別類介紹目前使用上必須記得快捷鍵及小技巧。</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
@@ -390,7 +453,7 @@
                 data-message-zero="沒有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 1 篇文章
+                找到 2 篇文章
             </p>
         </div>
     </div>
