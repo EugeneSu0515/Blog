@@ -11,7 +11,7 @@
     
     
     
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
     <meta name="description" content="前提情要 身為Web及.net MVC開發者來說，多多少少會有機會寫到Razor View。筆者因工作上曾擔任過SA一陣子，工作內容包含劃Prototype頁面與客戶溝通作業流程及操作方式，當時案子套版基底是使用Bootstrap3，知道需要長時間使用Bootstrap，因此筆者有下功夫熟悉它的css class。且那時有幸已知道ZenCoding(Emmet)這玩意，詳細可參考 ZEN-CODI">
 <meta name="keywords" content="vscode,Razor,Emmet">
@@ -21,12 +21,12 @@
 <meta property="og:site_name" content="Eugene Su">
 <meta property="og:description" content="前提情要 身為Web及.net MVC開發者來說，多多少少會有機會寫到Razor View。筆者因工作上曾擔任過SA一陣子，工作內容包含劃Prototype頁面與客戶溝通作業流程及操作方式，當時案子套版基底是使用Bootstrap3，知道需要長時間使用Bootstrap，因此筆者有下功夫熟悉它的css class。且那時有幸已知道ZenCoding(Emmet)這玩意，詳細可參考 ZEN-CODI">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://eugenesu0515.github.io/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/CshtmlEmmet.gif">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/CshtmlEmmet.gif">
 <meta property="og:updated_time" content="2017-09-18T06:52:29.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VSCode技巧：解決RazorView中Emmet失效問題">
 <meta name="twitter:description" content="前提情要 身為Web及.net MVC開發者來說，多多少少會有機會寫到Razor View。筆者因工作上曾擔任過SA一陣子，工作內容包含劃Prototype頁面與客戶溝通作業流程及操作方式，當時案子套版基底是使用Bootstrap3，知道需要長時間使用Bootstrap，因此筆者有下功夫熟悉它的css class。且那時有幸已知道ZenCoding(Emmet)這玩意，詳細可參考 ZEN-CODI">
-<meta name="twitter:image" content="http://eugenesu0515.github.io/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/CshtmlEmmet.gif">
+<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/CshtmlEmmet.gif">
 <meta name="twitter:creator" content="@Eugene_Su">
     
         <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
@@ -41,7 +41,7 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
+    <link rel="stylesheet" href="/Blog/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
     <!--STYLES END-->
     
     
@@ -61,7 +61,7 @@
 <header id="header" data-behavior="5">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
-        <a class="header-title-link" href="/ ">Eugene Su</a>
+        <a class="header-title-link" href="/Blog/ ">Eugene Su</a>
     </div>
     
         
@@ -86,7 +86,7 @@
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
-                <a href="/#about">
+                <a href="/Blog/#about">
                     <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/e6ca445a85d16acdce3d64b521812cb8?s=140" alt="作者的圖片"/>
                 </a>
                 <h4 class="sidebar-profile-name">Eugene Su</h4>
@@ -102,7 +102,7 @@
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/ "
+                             href="/Blog/ "
                             
                         >
                     
@@ -114,7 +114,7 @@
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/all-categories"
+                             href="/Blog/all-categories"
                             
                         >
                     
@@ -126,7 +126,7 @@
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/all-tags"
+                             href="/Blog/all-tags"
                             
                         >
                     
@@ -138,7 +138,7 @@
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/all-archives"
+                             href="/Blog/all-archives"
                             
                         >
                     
@@ -209,7 +209,7 @@
                 <li class="sidebar-button">
                     
                         <a  class="sidebar-button-link "
-                             href="/atom.xml"
+                             href="/Blog/atom.xml"
                             
                         >
                     
@@ -248,7 +248,7 @@
     
         <span>分類 </span>
         
-    <a class="category-link" href="/categories/vscode/">vscode</a>
+    <a class="category-link" href="/Blog/categories/vscode/">vscode</a>
 
 
     
@@ -273,7 +273,7 @@
 <p>筆者選擇UserSetting，希望每個MVC專案的View都有Emmet效果，且不用每個專案個別設定，設定如下</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"emmet.includeLanguages": &#123;</div><div class="line">        "cshtml":"html"</div><div class="line">      &#125;,</div><div class="line">"files.associations": &#123;"*.cshtml":"html"&#125;</div></pre></td></tr></table></figure>
 <p>第一條是設定language mapping，第二條則是副檔名為cshtml的當作html語法檔案。詳細說明參考<a href="https://code.visualstudio.com/docs/getstarted/settings" target="_blank" rel="external">VSCode/Docs/Setting</a>及<a href="https://code.visualstudio.com/docs/editor/emmet" target="_blank" rel="external">VSCode/Docs/Editor/Emmet</a>。</p>
-<p>直接來看一下設定後的效果吧。<br><img src="/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/CshtmlEmmet.gif" alt="[cshtml_emmet]" title="[cshtml_emmet]"></p>
+<p>直接來看一下設定後的效果吧。<br><img src="/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/CshtmlEmmet.gif" alt="[cshtml_emmet]" title="[cshtml_emmet]"></p>
 <p>Zen Coding的技巧部份就不多加敘述，可閱讀第一段所列的部落格文章，參考其對應語法，筆者覺得只要熟悉並善用</p>
 <ul>
 <li>#</li>
@@ -300,7 +300,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Emmet/">Emmet</a> <a class="tag tag--primary tag--small t-link" href="/tags/Razor/">Razor</a> <a class="tag tag--primary tag--small t-link" href="/tags/vscode/">vscode</a>
+    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/Emmet/">Emmet</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/Razor/">Razor</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vscode/">vscode</a>
 
             </div>
         
@@ -318,7 +318,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/09/12/dotnet-core系列文章二：VSCode教學/" data-tooltip="dotnet-core系列文章二：VSCode教學">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/" data-tooltip="dotnet-core系列文章二：VSCode教學">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -410,7 +410,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/09/12/dotnet-core系列文章二：VSCode教學/" data-tooltip="dotnet-core系列文章二：VSCode教學">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/" data-tooltip="dotnet-core系列文章二：VSCode教學">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -639,9 +639,9 @@
 </div>
 
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/Blog/assets/images/cover.jpg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
+<script src="/Blog/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
 <!--SCRIPTS END-->
 
     
