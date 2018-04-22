@@ -6,20 +6,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Eugene Su">
-    <title>標籤: vscode - Eugene Su</title>
+    <title>VSCode技巧：vue開發套件vetur相關設定 - Eugene Su</title>
     <meta name="author" content="Eugene Su">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="Eugene Su">
-<meta property="og:url" content="http://eugenesu0515.github.io/tags/vscode/index.html">
+    <meta name="description" content="前提情要 目前專案選擇vue.js作為前端開發使用Framework，開發工具選擇VsCode的狀況下，筆者搜尋一下相關plugins，發現vetur下載率很高，含基本的  syntax highlighting  Snippet  Auto Completion  對筆者來說已足夠，趕緊下載來試用。稍微觀看一下該套件格式化相關設定，對於vue webpack template開發來說，需要再手動">
+<meta name="keywords" content="vscode,vue,vetur">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="VSCode技巧：vue開發套件vetur相關設定">
+<meta property="og:url" content="http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/index.html">
 <meta property="og:site_name" content="Eugene Su">
+<meta property="og:description" content="前提情要 目前專案選擇vue.js作為前端開發使用Framework，開發工具選擇VsCode的狀況下，筆者搜尋一下相關plugins，發現vetur下載率很高，含基本的  syntax highlighting  Snippet  Auto Completion  對筆者來說已足夠，趕緊下載來試用。稍微觀看一下該套件格式化相關設定，對於vue webpack template開發來說，需要再手動">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-04-22T14:30:06.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eugene Su">
+<meta name="twitter:title" content="VSCode技巧：vue開發套件vetur相關設定">
+<meta name="twitter:description" content="前提情要 目前專案選擇vue.js作為前端開發使用Framework，開發工具選擇VsCode的狀況下，筆者搜尋一下相關plugins，發現vetur下載率很高，含基本的  syntax highlighting  Snippet  Auto Completion  對筆者來說已足夠，趕緊下載來試用。稍微觀看一下該套件格式化相關設定，對於vue webpack template開發來說，需要再手動">
 <meta name="twitter:creator" content="@Eugene_Su">
     
         <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
@@ -51,7 +56,7 @@
         
     
 
-<header id="header" data-behavior="2">
+<header id="header" data-behavior="5">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/Blog/ ">Eugene Su</a>
@@ -75,7 +80,7 @@
         
     
 
-<nav id="sidebar" data-behavior="2">
+<nav id="sidebar" data-behavior="5">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -217,26 +222,22 @@
 </nav>
 
             
-            <div id="main" data-behavior="2"
+            <div id="main" data-behavior="5"
                  class="
                         hasCoverMetaIn
                         ">
                 
-    <section class="postShorten-group main-content-wrap">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
-                            VSCode技巧：vue開發套件vetur相關設定
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            VSCode技巧：vue開發套件vetur相關設定
+        </h1>
+    
+    
+        <div class="post-meta">
     <time itemprop="datePublished" datetime="2018-04-21T21:33:38+08:00">
 	
 		    4月 21, 2018
@@ -245,10 +246,12 @@
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
 <p>目前專案選擇<a href="https://vuejs.org/" target="_blank" rel="external">vue.js</a>作為前端開發使用Framework，開發工具選擇VsCode的狀況下，筆者搜尋一下相關plugins，發現<a href="https://github.com/vuejs/vetur" target="_blank" rel="external">vetur</a>下載率很高，含基本的</p>
 <ul>
 <li><code>syntax highlighting</code> </li>
@@ -256,115 +259,109 @@
 <li><code>Auto Completion</code></li>
 </ul>
 <p>對筆者來說已足夠，趕緊下載來試用。稍微觀看一下該套件格式化相關設定，對於vue webpack template開發來說，需要再手動設定。</p>
-                    
-                        <a href="/Blog/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
+<a id="more"></a>
+<h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
+<p>若以vue-cli產生之template開發則會以獨立vue檔案的形式開發，vetur在格式化預設設定中不包含html部份，參考 <a href="https://github.com/vuejs/vetur/blob/master/docs/formatting.md" target="_blank" rel="external">https://github.com/vuejs/vetur/blob/master/docs/formatting.md</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.html"</span>: <span class="string">"none"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.css"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.postcss"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.scss"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.less"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.stylus"</span>: <span class="string">"stylus-supremacy"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.js"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.ts"</span>: <span class="string">"prettier"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因此我們就針對html來做設定，<code>Ctrl+,</code>叫出Vscode的UserSettings，可設定為<code>prettier</code>:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">"vetur.format.defaultFormatter.html": "prettier",</div></pre></td></tr></table></figure></p>
+<p>也可以將其設定為<code>js-beautify-html</code>，請填入以下設定：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">"vetur.format.defaultFormatter.html": "js-beautify-html",</div><div class="line">"vetur.format.defaultFormatterOptions": &#123;</div><div class="line">    "js-beautify-html": &#123;</div><div class="line">        "wrap_attributes": "force-aligned"</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
+<p>設定成功後，可以按下<code>Alt + Shift + F</code>來格式化vue檔案了，效果如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://vuejs.org"</span></span></div><div class="line"><span class="tag">        <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span></div><div class="line">        Core Docs</div><div class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://forum.vuejs.org"</span></span></div><div class="line"><span class="tag">        <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span></div><div class="line">        Forum</div><div class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure></p>
+
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/">
-                            VSCode技巧：解決RazorView中Emmet失效問題
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-09-16T21:44:40+08:00">
-	
-		    9月 16, 2017
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vscode/">vscode</a>
-
-
-    
-</div>
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vetur/">vetur</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vscode/">vscode</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vue/">vue</a>
 
             </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>身為Web及.net MVC開發者來說，多多少少會有機會寫到Razor View。筆者因工作上曾擔任過SA一陣子，工作內容包含劃Prototype頁面與客戶溝通作業流程及操作方式，當時案子套版基底是使用<a href="https://getbootstrap.com/docs/3.3/" target="_blank" rel="external">Bootstrap3</a>，知道需要長時間使用Bootstrap，因此筆者有下功夫熟悉它的css class。且那時有幸已知道<strong>ZenCoding</strong>(Emmet)這玩意，詳細可參考 <a href="http://blog.kkbruce.net/2012/11/zen-coding-extremely-speed-write-your-html5-css3-code.html#.Wb0uksgjGUk" target="_blank" rel="external">ZEN-CODING - 教你極速撰寫HTML5與CSS3程式碼</a>(筆者當年就被這篇文章燒到)。</p>
-                    
-                        <a href="/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/">
-                            dotnet-core系列文章二：VSCode教學
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-09-12T08:11:27+08:00">
-	
-		    9月 12, 2017
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/dotnet-core/">dotnet core</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>上一篇講到開發dotnet core相關程式，論語說「工欲善其事，必先利其器」，相當然爾，熟悉開發工具這件事情直接影響你的開發產能。因筆者現況，公司配的桌機跟自己的筆電配備上有落差，以不耗系統資源的考量下，下定決心將「Visual Studio Code」作為首選開發工具。</p>
-                    
-                        <a href="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
         
         
-        <li class="pagination-number">第 1 頁 共 1 頁</li>
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/" data-tooltip="VSCode技巧：解決RazorView中Emmet失效問題">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -374,6 +371,110 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/" data-tooltip="VSCode技巧：解決RazorView中Emmet失效問題">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                    <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                    <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                    <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
             
         </div>
         
@@ -538,6 +639,25 @@
         <!--SCRIPTS-->
 <script src="/Blog/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
 <!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/';
+                 
+                    this.page.identifier = '2018/04/21/VSCode技巧：vue開發套件vetur相關設定/';
+                 
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'EugeneSu';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>

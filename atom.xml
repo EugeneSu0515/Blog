@@ -6,7 +6,7 @@
   <link href="/Blog/atom.xml" rel="self"/>
   
   <link href="http://eugenesu0515.github.io/"/>
-  <updated>2017-09-18T06:52:29.303Z</updated>
+  <updated>2018-04-22T14:30:06.245Z</updated>
   <id>http://eugenesu0515.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VSCode技巧：vue開發套件vetur相關設定</title>
+    <link href="http://eugenesu0515.github.io/2018/04/21/VSCode%E6%8A%80%E5%B7%A7%EF%BC%9Avue%E9%96%8B%E7%99%BC%E5%A5%97%E4%BB%B6vetur%E7%9B%B8%E9%97%9C%E8%A8%AD%E5%AE%9A/"/>
+    <id>http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/</id>
+    <published>2018-04-21T13:33:38.000Z</published>
+    <updated>2018-04-22T14:30:06.245Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr><p>目前專案選擇<a href="https://vuejs.org/" target="_blank" rel="external">vue.js</a>作為前端開發使用Framework，開發工具選擇VsCode的狀況下，筆者搜尋一下相關plugins，發現<a href="https://github.com/vuejs/vetur" target="_blank" rel="external">vetur</a>下載率很高，含基本的</p><ul><li><code>syntax highlighting</code> </li><li><code>Snippet</code> </li><li><code>Auto Completion</code></li></ul><p>對筆者來說已足夠，趕緊下載來試用。稍微觀看一下該套件格式化相關設定，對於vue webpack template開發來說，需要再手動設定。</p><a id="more"></a><h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr><p>若以vue-cli產生之template開發則會以獨立vue檔案的形式開發，vetur在格式化預設設定中不包含html部份，參考 <a href="https://github.com/vuejs/vetur/blob/master/docs/formatting.md" target="_blank" rel="external">https://github.com/vuejs/vetur/blob/master/docs/formatting.md</a></p><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.html"</span>: <span class="string">"none"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.css"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.postcss"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.scss"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.less"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.stylus"</span>: <span class="string">"stylus-supremacy"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.js"</span>: <span class="string">"prettier"</span>,</div><div class="line">  <span class="attr">"vetur.format.defaultFormatter.ts"</span>: <span class="string">"prettier"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure><p>因此我們就針對html來做設定，<code>Ctrl+,</code>叫出Vscode的UserSettings，可設定為<code>prettier</code>:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">"vetur.format.defaultFormatter.html": "prettier",</div></pre></td></tr></table></figure></p><p>也可以將其設定為<code>js-beautify-html</code>，請填入以下設定：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">"vetur.format.defaultFormatter.html": "js-beautify-html",</div><div class="line">"vetur.format.defaultFormatterOptions": &#123;</div><div class="line">    "js-beautify-html": &#123;</div><div class="line">        "wrap_attributes": "force-aligned"</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr><p>設定成功後，可以按下<code>Alt + Shift + F</code>來格式化vue檔案了，效果如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://vuejs.org"</span></span></div><div class="line"><span class="tag">        <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span></div><div class="line">        Core Docs</div><div class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://forum.vuejs.org"</span></span></div><div class="line"><span class="tag">        <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span></div><div class="line">        Forum</div><div class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前提情要&quot;&gt;&lt;a href=&quot;#前提情要&quot; class=&quot;headerlink&quot; title=&quot;前提情要&quot;&gt;&lt;/a&gt;前提情要&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;目前專案選擇&lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vue.js&lt;/a&gt;作為前端開發使用Framework，開發工具選擇VsCode的狀況下，筆者搜尋一下相關plugins，發現&lt;a href=&quot;https://github.com/vuejs/vetur&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;vetur&lt;/a&gt;下載率很高，含基本的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;syntax highlighting&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Snippet&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Auto Completion&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;對筆者來說已足夠，趕緊下載來試用。稍微觀看一下該套件格式化相關設定，對於vue webpack template開發來說，需要再手動設定。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="vscode" scheme="http://eugenesu0515.github.io/tags/vscode/"/>
+    
+      <category term="vue" scheme="http://eugenesu0515.github.io/tags/vue/"/>
+    
+      <category term="vetur" scheme="http://eugenesu0515.github.io/tags/vetur/"/>
+    
+  </entry>
   
   <entry>
     <title>VSCode技巧：解決RazorView中Emmet失效問題</title>
