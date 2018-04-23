@@ -424,7 +424,9 @@
                             </span>
                         </span>
                         <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中<code>router/index.js</code>，每個人的各自component需要import與設定其url，筆者公司採用<a href="https://subversion.apache.org/" target="_blank" rel="external">svn</a>作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。<br>時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。<br>因有layout關係，必須將其他component所屬url必須放置於layout的children設定中，有些人沒有仔細看就直接將設定寫在layout同層，有些url還被設定到兩次，太氣了，讓筆者murmur一下。</p></div>
+<p>多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中<code>router/index.js</code>，每個人的各自component需要import與設定其url，筆者公司採用<a href="https://subversion.apache.org/" target="_blank" rel="external">svn</a>作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。</p>
+<p>時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。</p>
+<p>因有layout關係，必須將其他component所屬url必須放置於layout的children設定中，有些人沒有仔細看就直接將設定寫在layout同層，有些url還被設定到兩次，太氣了，讓筆者murmur一下。</p></div>
                     </div>
                     <div style="clear:both;"></div>
                     <hr>
