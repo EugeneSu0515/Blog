@@ -23,7 +23,7 @@
     <published>2018-04-23T00:45:08.000Z</published>
     <updated>2018-04-23T02:53:28.796Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr><p>多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中<code>router/index.js</code>，每個人的各自component需要import與設定其url，筆者公司採用<a href="https://subversion.apache.org/" target="_blank" rel="external">svn</a>作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。<br>時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。<br>因有layout關係，必須將其他component所屬url必須放置於layout的children設定中，有些人沒有仔細看就直接將設定寫在layout同層，有些url還被設定到兩次，太氣了，讓筆者murmur一下。</p><a id="more"></a><h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr><p>所以筆者就把layout同層的剪下後貼到另一支新開的檔案中，想要與原檔案比對的方式，把重複的整理一下並塞回正常的設定階層中。有上網找一下檔案比對的工具，例如：<a href="https://free.com.tw/diffchecker/" target="_blank" rel="external">diffchecker</a>，但總覺得不想離開vscode去操作其他軟體阿，索性搜索一下vscode是否具備檔案比對功能，太神拉，還真的有。<br>我們就以vue預設webpack template中的router/index.js為例，再新增一個檔案，將原本的貼上後多一個數字2。</p><ul><li>第一步驟需在欲比對的新檔案上按右鍵選擇<code>Select for compare</code></li></ul><ul><li>第二步驟則在欲比對的原始檔案上按右鍵選擇<code>Compare with Selected</code></li></ul><ul><li>比對成就達成</li></ul><h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr><p>當然上述例子應該透過改善程式上版流程且遇到衝突時應該就要被解決，千萬不要學筆者積了一堆route設定後才來調，心臟要很大顆阿。<br>使用vscode來比對檔案，有一種熟悉的感覺-版空中的解決衝突的畫面，對於有版空習慣的程式撰寫者來說，應該是很容易看出不一樣的地方，非常推薦給大家。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr><p>多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中<code>router/index.js</code>，每個人的各自component需要import與設定其url，筆者公司採用<a href="https://subversion.apache.org/" target="_blank" rel="external">svn</a>作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。<br>時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。<br>因有layout關係，必須將其他component所屬url必須放置於layout的children設定中，有些人沒有仔細看就直接將設定寫在layout同層，有些url還被設定到兩次，太氣了，讓筆者murmur一下。</p><a id="more"></a><h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr><p>所以筆者就把layout同層的剪下後貼到另一支新開的檔案中，想要與原檔案比對的方式，把重複的整理一下並塞回正常的設定階層中。有上網找一下檔案比對的工具，例如：<a href="https://free.com.tw/diffchecker/" target="_blank" rel="external">diffchecker</a>，但總覺得不想離開vscode去操作其他軟體阿，索性搜索一下vscode是否具備檔案比對功能，太神拉，還真的有。<br>我們就以vue預設webpack template中的router/index.js為例，再新增一個檔案，將原本的貼上後多一個數字2。</p><ul><li>第一步驟需在欲比對的新檔案上按右鍵選擇<code>Select for compare</code></li></ul><img src="/Blog/2018/04/23/VSCode技巧：檔案比對差異/SelectForCompare.jpg" alt="[SelectForCompare]" title="[SelectForCompare]"><ul><li>第二步驟則在欲比對的原始檔案上按右鍵選擇<code>Compare with Selected</code></li></ul><img src="/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareWithSelected.jpg" alt="[CompareWithSelected]" title="[CompareWithSelected]"><ul><li>比對成就達成</li></ul><img src="/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareResult.jpg" alt="[CompareWithSelected]" title="[CompareWithSelected]"><h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr><p>當然上述例子應該透過改善程式上版流程且遇到衝突時應該就要被解決，千萬不要學筆者積了一堆route設定後才來調，心臟要很大顆阿。<br>使用vscode來比對檔案，有一種熟悉的感覺-版空中的解決衝突的畫面，對於有版空習慣的程式撰寫者來說，應該是很容易看出不一樣的地方，非常推薦給大家。</p>]]></content>
     
     <summary type="html">
     
@@ -116,9 +116,9 @@
       <category term="dotnet core" scheme="http://eugenesu0515.github.io/categories/dotnet-core/"/>
     
     
-      <category term="vscode" scheme="http://eugenesu0515.github.io/tags/vscode/"/>
-    
       <category term="dotnet core" scheme="http://eugenesu0515.github.io/tags/dotnet-core/"/>
+    
+      <category term="vscode" scheme="http://eugenesu0515.github.io/tags/vscode/"/>
     
   </entry>
   

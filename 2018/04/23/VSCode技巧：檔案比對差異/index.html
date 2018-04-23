@@ -21,10 +21,14 @@
 <meta property="og:site_name" content="Eugene Su">
 <meta property="og:description" content="前提情要 多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中router/index.js，每個人的各自component需要import與設定其url，筆者公司採用svn作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。因有">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/VSCode技巧：檔案比對差異/SelectForCompare.jpg">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareWithSelected.jpg">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareResult.jpg">
 <meta property="og:updated_time" content="2018-04-23T02:53:28.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VSCode技巧：檔案比對差異">
 <meta name="twitter:description" content="前提情要 多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中router/index.js，每個人的各自component需要import與設定其url，筆者公司採用svn作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。因有">
+<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/VSCode技巧：檔案比對差異/SelectForCompare.jpg">
 <meta name="twitter:creator" content="@Eugene_Su">
     
         <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
@@ -259,15 +263,15 @@
 <ul>
 <li>第一步驟需在欲比對的新檔案上按右鍵選擇<code>Select for compare</code></li>
 </ul>
-
+<img src="/Blog/2018/04/23/VSCode技巧：檔案比對差異/SelectForCompare.jpg" alt="[SelectForCompare]" title="[SelectForCompare]">
 <ul>
 <li>第二步驟則在欲比對的原始檔案上按右鍵選擇<code>Compare with Selected</code></li>
 </ul>
-
+<img src="/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareWithSelected.jpg" alt="[CompareWithSelected]" title="[CompareWithSelected]">
 <ul>
 <li>比對成就達成</li>
 </ul>
-
+<img src="/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareResult.jpg" alt="[CompareWithSelected]" title="[CompareWithSelected]">
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
 <p>當然上述例子應該透過改善程式上版流程且遇到衝突時應該就要被解決，千萬不要學筆者積了一堆route設定後才來調，心臟要很大顆阿。<br>使用vscode來比對檔案，有一種熟悉的感覺-版空中的解決衝突的畫面，對於有版空習慣的程式撰寫者來說，應該是很容易看出不一樣的地方，非常推薦給大家。</p>
 
