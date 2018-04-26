@@ -6,27 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Eugene Su">
-    <title>dotnet-core系列文章一：安裝 - Eugene Su</title>
+    <title>Vue系列文章二：VueWepackTemplate檔案結構介紹 - Eugene Su</title>
     <meta name="author" content="Eugene Su">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
-    <meta name="description" content="前提情要 目前微軟於「2017/08/14」正式發佈dotnet core2.0.0後，實作API數比版本1足足多了兩倍之多，是該進場的時候了。 身為ASP.NET開發者，以往都會限制於IIS Web Server才能架站，dotnet core本身跨平台的特性，且宿主不限制於IIS Web Server，加上僅開啟Visual Studio Code就可開發C#相關程式(設備配備不好的情況下超適">
-<meta name="keywords" content="dotnet core">
+    <meta name="description" content="前提情要 上一篇介紹到vue-cli建立vue application，其中筆者示範選擇以webpack template作為預設專案結構。這一篇就來簡單介紹一下專案中的檔案結構以及經驗分享。">
+<meta name="keywords" content="vue,webpack,vue-cli">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="dotnet-core系列文章一：安裝">
-<meta property="og:url" content="http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/index.html">
+<meta property="og:title" content="Vue系列文章二：VueWepackTemplate檔案結構介紹">
+<meta property="og:url" content="http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/index.html">
 <meta property="og:site_name" content="Eugene Su">
-<meta property="og:description" content="前提情要 目前微軟於「2017/08/14」正式發佈dotnet core2.0.0後，實作API數比版本1足足多了兩倍之多，是該進場的時候了。 身為ASP.NET開發者，以往都會限制於IIS Web Server才能架站，dotnet core本身跨平台的特性，且宿主不限制於IIS Web Server，加上僅開啟Visual Studio Code就可開發C#相關程式(設備配備不好的情況下超適">
+<meta property="og:description" content="前提情要 上一篇介紹到vue-cli建立vue application，其中筆者示範選擇以webpack template作為預設專案結構。這一篇就來簡單介紹一下專案中的檔案結構以及經驗分享。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2017/09/11/dotnet-core系列文章一：安裝/dotnet_core_new_console_run.jpg">
-<meta property="og:updated_time" content="2017-09-17T14:40:34.705Z">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/vue_test_app_file.jpg">
+<meta property="og:updated_time" content="2018-04-26T09:28:37.867Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dotnet-core系列文章一：安裝">
-<meta name="twitter:description" content="前提情要 目前微軟於「2017/08/14」正式發佈dotnet core2.0.0後，實作API數比版本1足足多了兩倍之多，是該進場的時候了。 身為ASP.NET開發者，以往都會限制於IIS Web Server才能架站，dotnet core本身跨平台的特性，且宿主不限制於IIS Web Server，加上僅開啟Visual Studio Code就可開發C#相關程式(設備配備不好的情況下超適">
-<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2017/09/11/dotnet-core系列文章一：安裝/dotnet_core_new_console_run.jpg">
+<meta name="twitter:title" content="Vue系列文章二：VueWepackTemplate檔案結構介紹">
+<meta name="twitter:description" content="前提情要 上一篇介紹到vue-cli建立vue application，其中筆者示範選擇以webpack template作為預設專案結構。這一篇就來簡單介紹一下專案中的檔案結構以及經驗分享。">
+<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/vue_test_app_file.jpg">
 <meta name="twitter:creator" content="@Eugene_Su">
     
         <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
@@ -235,20 +235,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            dotnet-core系列文章一：安裝
+            Vue系列文章二：VueWepackTemplate檔案結構介紹
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-09-11T19:12:17+08:00">
+    <time itemprop="datePublished" datetime="2018-04-25T13:09:37+08:00">
 	
-		    9月 11, 2017
+		    4月 25, 2018
     	
     </time>
     
         <span>分類 </span>
         
-    <a class="category-link" href="/Blog/categories/dotnet-core/">dotnet core</a>
+    <a class="category-link" href="/Blog/categories/vue/">vue</a>
 
 
     
@@ -260,30 +260,47 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>目前微軟於「2017/08/14」正式發佈dotnet core2.0.0後，實作API數比版本1足足多了兩倍之多，是該進場的時候了。</p>
-<p>身為ASP.NET開發者，以往都會限制於IIS Web Server才能架站，dotnet core本身跨平台的特性，且宿主不限制於IIS Web Server，加上僅開啟Visual Studio Code就可開發C#相關程式(設備配備不好的情況下超適用)，上述種種因素，是該投資時間研究dotnet core的時候了。</p>
+<p>上一篇介紹到<code>vue-cli</code>建立vue application，其中筆者示範選擇以<code>webpack template</code>作為預設專案結構。這一篇就來簡單介紹一下專案中的檔案結構以及經驗分享。</p>
 <a id="more"></a>
 <h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
-<p>首先，需至Microsoft Download網站下載SDK。</p>
-<p><a href="https://www.microsoft.com/net/core" target="_blank" rel="external">dotnet core SDK</a></p>
-<p>安裝完畢後，請打開Command line輸入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet --version</div></pre></td></tr></table></figure></p>
-<p>測試是否正常執行，若安裝成功，會回傳<code>2.0.0</code></p>
-<p>目前官方預設範本有</p>
+<p>先來貼一張vscode開啟後檔案結構：</p>
+<img src="/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/vue_test_app_file.jpg" alt="[vue_test_app_file]" title="[vue_test_app_file]">
+<p>以下解釋一下每個資料夾的用意，詳細參考 <a href="http://vuejs-templates.github.io/webpack" target="_blank" rel="external">vue webpack template document</a>，內容就以筆者到目前為止更改過的設定去做說明。</p>
+<h3 id="build"><a href="#build" class="headerlink" title="build"></a><strong>build</strong></h3><p>顧名思義，建置相關設定是在這目錄中的檔案設定，主要是<code>hot loader</code>及打包壓縮相關設定。此目錄中會調整到的檔案屬<code>webpack</code>開頭之檔案，還可為dev及prod做特別不同的設定。</p>
+<p>若你是與筆者一樣是使用bootstrap作為網站切版基底則，且已經有<code>UI/UX</code>提供jquery效果則需要多加一些設定。設定步驟為</p>
 <ul>
-<li>Console Application</li>
-<li>ASP.NET Core MVC</li>
-<li>ASP.NET Core WebAPI</li>
-<li>其他</li>
+<li><code>npm install</code>方式安裝jquery、popperjs及bootstrap</li>
+<li>在<code>webpack.base.conf.js</code>加<code>plugins</code>相關設定</li>
 </ul>
-<p>詳細範本種類可參考<a href="https://docs.microsoft.com/zh-tw/dotnet/core/tools/dotnet-new" target="_blank" rel="external">dotnet core cli-new命令</a></p>
-<p>接著，我們來建一個實際的專案，使用console範本作示範。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dotnet new console -o helloworldapp</div></pre></td></tr></table></figure>
-<p>上述指令中，最後結為尾為「專案名稱」，其中<code>-o</code>表示自動以「專案名稱」建立資料夾。</p>
-<p>建立完成後，參考以下指令來執行程式碼<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//進入該資料夾</div><div class="line">cd helloworldapp</div><div class="line">//執行程式</div><div class="line">dotnet run</div></pre></td></tr></table></figure></p>
-<p>就可以看到以下執行結果，參考</p>
-<img src="/Blog/2017/09/11/dotnet-core系列文章一：安裝/dotnet_core_new_console_run.jpg" alt="[dotnet_run]" title="[dotnet_run]">
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// const宣告區塊中增加</span></div><div class="line"><span class="comment">// 載入webpack</span></div><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// module.exports中增加plugins option</span></div><div class="line">plugins:[</div><div class="line">    <span class="keyword">new</span> webpack.ProvidePlugin(&#123;</div><div class="line">        $: <span class="string">'jquery'</span>,</div><div class="line">        jQuery: <span class="string">'jquery'</span>,</div><div class="line">        <span class="string">'window.jQuery'</span>: <span class="string">'jquery'</span>,</div><div class="line">        Popper: [<span class="string">'popper.js'</span>, <span class="string">'default'</span>]</div><div class="line">    &#125;)</div><div class="line">]</div></pre></td></tr></table></figure>
+<div class="alert danger no-icon"><p>切記：套用bootstrap4需安裝popperjs</p>
+</div>
+<p>上述設定完畢後，我們就直接在vue進入點<code>App.vue</code>的<code>script</code>區塊中import jquery以及<code>mounted</code>事件中把<code>UI/UX</code>提供的jquery code貼上去就大功告成。不方便在此直接秀公司的公版套用過程，先以敘述帶過，我再找時間補一篇套用<a href="https://startbootstrap.com/template-overviews/sb-admin-2/" target="_blank" rel="external">sbadmin2</a>的完整過程，比較會有感同身受。</p>
+<h3 id="config"><a href="#config" class="headerlink" title="config"></a><strong>config</strong></h3><p>專案環境變數相關設定，基本上就是在程式撰寫中依照development及prodution不同而變動的資料可以再此目錄中設定。</p>
+<ul>
+<li>index.js<br>預設會有兩種環境設定，<code>dev</code>及<code>prod(build)</code>，因此<code>npm run dev</code>時使用的port可於此設定以及<code>cors</code>問題可用<code>proxyTable</code>的方式解決，參考<a href="https://kuro.tw/posts/2017/06/07/%E5%A6%82%E4%BD%95%E5%9C%A8-Vue-CLI-%E5%BB%BA%E7%AB%8B%E7%9A%84%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E5%91%BC%E5%8F%AB%E8%B7%A8%E5%9F%9F%E9%81%A0%E7%AB%AF-RESTful-APIs/" target="_blank" rel="external">呼叫跨網域API解決方式</a>，筆者開發到目前為止，只改過這兩個設定，其他設定皆採用預設值。</li>
+<li>dev.env.js、prod.env.js<br>這兩個檔案中會建立同樣的key值不同value，透過跑<code>npm run dev/build</code>方式以不同的設定值去取代，舉個例子會比較好理解，在開發端及正式伺服器上呼叫的api網址會有所不一樣，這時就可以在這設定。</li>
+</ul>
+<figure class="codeblock codeblock--tabbed"><figcaption><span>env.js</span><ul class="tabs"><li class="tab active">dev</li><li class="tab">prod</li></ul></figcaption><div class="tabs-content"><figure class="highlight plain" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">API_BASE_URL: '"http://localhost:5000/api"'</span><br></pre></td></tr></tbody></table></figure><figure class="highlight plain" style="display: none;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">API_BASE_URL: '"http://serverip:5000/api"'</span><br></pre></td></tr></tbody></table></figure></div></figure>
+<div class="alert danger no-icon"><p>設定值需要按照格式，一定要使用一組單引號中有雙引號的方式<code>&#39;&quot;&quot;&#39;</code></p>
+</div>
+<p>在vue程式中使用方式為<code>process.env.key</code>，以上述例子來說宣告為</p>
+<blockquote>
+<p>process.env.API_BASE_URL</p>
+</blockquote>
+<div class="alert danger no-icon"><p>需要注意的是設定完成後，需要重跑一次<code>npm run dev/build</code>才會生效</p>
+</div>
+<h3 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a><strong>node_modules</strong></h3><p>安裝的套件皆在此目錄中。這目錄就不多加敘述。不過有時引用vue套件的話，透過觀看該套件的原始碼，也可以偷學到一些vue撰寫招數，也是滿有收穫的，不過就要先有基本概念再去參考，以免一開始就學到偷吃步的招數而走歪。</p>
+<h3 id="src"><a href="#src" class="headerlink" title="src"></a><strong>src</strong></h3><p>Vue程式在此目錄中撰寫。筆者目前就以功能面(模組)作為切分資料夾的依據存放Component，這就看各自的開發習慣作切割，以好找為主。</p>
+<h3 id="static"><a href="#static" class="headerlink" title="static"></a><strong>static</strong></h3><p>若有些特殊頁面不與vue相關，需要獨立宣告的靜態檔案可放與此。筆者就有經驗，因在實作Single sign out功能，使用過<a href="http://identityserver.io/" target="_blank" rel="external">Identity Server4</a>，Vue前端專案當作client與Identity Server互動時就需要撰寫callback程式，就會需要宣告於此目錄中，參考 <a href="https://github.com/saitolabs/vuejs-oidc-client" target="_blank" rel="external">vuejs-oidc-client</a>。</p>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
-<p>dotnet core環境安裝上簡單，dotnet cli的很直覺的操作性，整體來說，本身是寫.net framework相關程式則不會有什麼學習上的障礙，那你還等什麼呢？</p>
+<p>此篇簡單的介紹一下<code>webpack</code>預設template產生之資料夾結構，若想要自己重頭設定起筆者推薦此篇 <a href="https://segmentfault.com/a/1190000005363030" target="_blank" rel="external">vue+webpack起手式</a>，筆者出社會後都以C#作為主要開發語言，加上開發產品功能還是要緊，就先使用預設範本下去開發。不過還是要先看過這兩篇</p>
+<ul>
+<li><a href="http://vuejs-templates.github.io/webpack" target="_blank" rel="external">vue webpack template document</a></li>
+<li><a href="https://segmentfault.com/a/1190000005363030" target="_blank" rel="external">vue+webpack起手式</a></li>
+</ul>
+<p>才會有概念，到時遇到問題時就會知道要在<a href="www.google.com">google</a>下甚麼關鍵字了。</p>
 
             
         </div>
@@ -293,7 +310,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/dotnet-core/">dotnet core</a>
+    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vue/">vue</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vue-cli/">vue-cli</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/webpack/">webpack</a>
 
             </div>
         
@@ -303,7 +320,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/"  data-tooltip="dotnet-core系列文章二：VSCode教學">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -311,7 +328,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/23/Vue系列文章一：Vue簡介/" data-tooltip="Vue系列文章一：Vue簡介">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -329,7 +346,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -337,7 +354,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -345,7 +362,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -395,7 +412,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/"  data-tooltip="dotnet-core系列文章二：VSCode教學">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -403,7 +420,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/23/Vue系列文章一：Vue簡介/" data-tooltip="Vue系列文章一：Vue簡介">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -421,7 +438,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -429,7 +446,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -437,7 +454,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -468,7 +485,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
                     <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
                 </a>
             </li>
@@ -476,7 +493,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
                     <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
                 </a>
             </li>
@@ -484,7 +501,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
                     <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
                 </a>
             </li>
@@ -727,9 +744,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/';
+                 this.page.url = 'http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/';
                  
-                    this.page.identifier = '2017/09/11/dotnet-core系列文章一：安裝/';
+                    this.page.identifier = '2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/';
                  
              };
             (function() {
