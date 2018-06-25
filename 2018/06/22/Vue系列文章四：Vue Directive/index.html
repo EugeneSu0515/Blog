@@ -6,27 +6,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Eugene Su">
-    <title>Vue系列文章一：Vue簡介 - Eugene Su</title>
+    <title>Vue系列文章四：Vue Directive - Eugene Su</title>
     <meta name="author" content="Eugene Su">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
-    <meta name="description" content="前提情要 目前公司開發產品選擇vue.js作為前端開發框架，選擇原因不外呼是  容易上手 考量到產品之後會由大陸團隊接手 Virtual Dom設計，效能方面不需要擔心">
+    <meta name="description" content="前提情要 前一篇已介紹了Vue基本語法，筆者相信應該是有辦法撰寫簡單的邏輯，接下來這一篇介紹v開頭directive相關技巧及知識，筆者使用工具及環境參考上一篇「Vue基本語法」。">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Vue系列文章一：Vue簡介">
-<meta property="og:url" content="http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/index.html">
+<meta property="og:title" content="Vue系列文章四：Vue Directive">
+<meta property="og:url" content="http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/index.html">
 <meta property="og:site_name" content="Eugene Su">
-<meta property="og:description" content="前提情要 目前公司開發產品選擇vue.js作為前端開發框架，選擇原因不外呼是  容易上手 考量到產品之後會由大陸團隊接手 Virtual Dom設計，效能方面不需要擔心">
+<meta property="og:description" content="前提情要 前一篇已介紹了Vue基本語法，筆者相信應該是有辦法撰寫簡單的邏輯，接下來這一篇介紹v開頭directive相關技巧及知識，筆者使用工具及環境參考上一篇「Vue基本語法」。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/Vue系列文章一：Vue簡介/vue_app.jpg">
-<meta property="og:updated_time" content="2018-04-25T03:52:42.038Z">
+<meta property="og:updated_time" content="2018-06-24T15:48:28.707Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue系列文章一：Vue簡介">
-<meta name="twitter:description" content="前提情要 目前公司開發產品選擇vue.js作為前端開發框架，選擇原因不外呼是  容易上手 考量到產品之後會由大陸團隊接手 Virtual Dom設計，效能方面不需要擔心">
-<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/Vue系列文章一：Vue簡介/vue_app.jpg">
+<meta name="twitter:title" content="Vue系列文章四：Vue Directive">
+<meta name="twitter:description" content="前提情要 前一篇已介紹了Vue基本語法，筆者相信應該是有辦法撰寫簡單的邏輯，接下來這一篇介紹v開頭directive相關技巧及知識，筆者使用工具及環境參考上一篇「Vue基本語法」。">
 <meta name="twitter:creator" content="@Eugene_Su">
     
         <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
@@ -235,14 +233,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Vue系列文章一：Vue簡介
+            Vue系列文章四：Vue Directive
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2018-04-23T18:56:34+08:00">
+    <time itemprop="datePublished" datetime="2018-06-22T13:44:15+08:00">
 	
-		    4月 23, 2018
+		    6月 22, 2018
     	
     </time>
     
@@ -260,59 +258,98 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>目前公司開發產品選擇<a href="https://vuefe.cn/v2/guide/" target="_blank" rel="external">vue.js</a>作為前端開發框架，選擇原因不外呼是</p>
-<ul>
-<li>容易上手</li>
-<li>考量到產品之後會由大陸團隊接手</li>
-<li>Virtual Dom設計，效能方面不需要擔心</li>
-</ul>
-<a id="more"></a>
+<p>前一篇已介紹了Vue基本語法，筆者相信應該是有辦法撰寫簡單的邏輯，接下來這一篇介紹<code>v開頭directive</code>相關技巧及知識，筆者使用工具及環境參考上一篇「Vue基本語法」。<br><a id="more"></a></p>
 <h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
-<p>產品開發之路是遙遠的路途，就決定好好研究它吧，起手式當然是要來寫一支<code>Hello World</code>程式。</p>
-<p>Vue的好處之一是若舊網站某些頁面很吃重前端效果則可考慮在該頁單獨使用它，可以感受model雙向綁定帶來的好處。這種方式只要將vue檔案載入就可以開始使用vue了。</p>
-<h3 id="使用vue方式一"><a href="#使用vue方式一" class="headerlink" title="使用vue方式一"></a>使用vue方式一</h3><blockquote>
-<p>載入vue.js檔案即可在頁面使用vue</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- body區塊結尾前宣告 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>載入完畢後，來初始化吧</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// script區塊中宣告</span></div><div class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  el: <span class="string">'#app'</span>,<span class="comment">//作用域</span></div><div class="line">  data: &#123;</div><div class="line">    message: <span class="string">'Hello Vue!'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>最後套用於body區塊中，在任意<code>div</code>中套用id為app，在該範圍中vue就生效了。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- body區塊中宣告 --&gt;</span></div><div class="line"><span class="comment">&lt;!--對應作用域選取元素--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  &#123;&#123; message &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>完整html檔案如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Test Vue<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">      &#123;&#123;message&#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">            el: <span class="string">'#app'</span>, <span class="comment">//作用域</span></span></div><div class="line"><span class="undefined">            data: &#123;</span></div><div class="line"><span class="javascript">                message: <span class="string">'Hello Vue!'</span></span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="使用vue方式二"><a href="#使用vue方式二" class="headerlink" title="使用vue方式二"></a>使用vue方式二</h3><blockquote>
-<p>利用vue-cli建立完整的前端專案</p>
-</blockquote>
-<p>首先要先提到vue-cli工具，可透過<a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a>進行安裝，指令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g vue-cli</div></pre></td></tr></table></figure>
-<p>使用<code>vue --version</code>來確認是否安裝成功，若出現版號，恭喜你成功了(筆者這邊環境是會出現<code>2.8.2</code>)。我們可以使用<code>vue help</code>來觀看一下支援哪些command吧。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">λ  vue help</div><div class="line"></div><div class="line">  Usage: vue &lt;command&gt; [options]</div><div class="line"></div><div class="line"></div><div class="line">  Options:</div><div class="line"></div><div class="line">    -V, --version  output the version number</div><div class="line">    -h, --help     output usage information</div><div class="line"></div><div class="line"></div><div class="line">  Commands:</div><div class="line"></div><div class="line">    init        generate a new project from a template</div><div class="line">    list        list available official templates</div><div class="line">    build       prototype a new project</div><div class="line">    help [cmd]  display help for [cmd]</div></pre></td></tr></table></figure>
-<p>我們等等建立vue application時會使用到<code>list</code> <code>init</code>指令來完成。</p>
-<p>首先先使用<code>vue list</code>觀看一下有哪些現成template可使用，參考如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">λ  vue list</div><div class="line"></div><div class="line">  Available official templates:</div><div class="line"></div><div class="line">  ★  browserify - A full-featured Browserify + vueify setup with hot-reload, linting &amp; unit testing.</div><div class="line">  ★  browserify-simple - A simple Browserify + vueify setup for quick prototyping.</div><div class="line">  ★  pwa - PWA template for vue-cli based on the webpack template</div><div class="line">  ★  simple - The simplest possible Vue setup in a single HTML file</div><div class="line">  ★  webpack - A full-featured Webpack + vue-loader setup with hot reload, linting, testing &amp; css extraction.</div><div class="line">  ★  webpack-simple - A simple Webpack + vue-loader setup for quick prototyping.</div></pre></td></tr></table></figure>
-<p>若使用vue撰寫純前端的application則建議直衝webpack(full)，主要支援<code>hot reload</code>，亦可選擇並設定好<code>router</code>相關設定。跟著筆者一起建立vue application吧。</p>
+<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前提情要"><span class="toc-text">前提情要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#內容"><span class="toc-text">內容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v開頭directive"><span class="toc-text">v開頭directive</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#v-html"><span class="toc-text">v-html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-if"><span class="toc-text">v-if</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-show"><span class="toc-text">v-show</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#v-for"><span class="toc-text">v-for</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#使用方法"><span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#變更偵測原理"><span class="toc-text">變更偵測原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#變更偵測注意事項"><span class="toc-text">變更偵測注意事項</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#可搭配使用說明"><span class="toc-text">可搭配使用說明</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Range"><span class="toc-text">Range</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#template"><span class="toc-text">template</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#v-if-1"><span class="toc-text">v-if</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#結論"><span class="toc-text">結論</span></a></li></ol>
+<h3 id="v開頭directive"><a href="#v開頭directive" class="headerlink" title="v開頭directive"></a>v開頭directive</h3><h4 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h4><p>若我們的資料是包含html tag，且是要當作html語法輸出時如何做呢？會用到<code>v-html</code>這個directive。</p>
 <blockquote>
-<p>使用<code>init</code>初始化專案，<code>webpack</code>關鍵字為選擇vue-cli提供之webpack template，最後名稱是專案名稱，使用<code>VueTestApp</code>。</p>
+<p>Html部份</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vue init webpack VueTestApp</div></pre></td></tr></table></figure>
-<p>執行步驟為</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;Using mustaches: &#123;&#123; rawHtml &#125;&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;Using v-html directive: &lt;span v-html=&quot;rawHtml&quot;&gt;&lt;/span&gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>效果如下</p>
+</blockquote>
+<p>Using mustaches: &lt;span style=”color: red”&gt;This should be red.&lt;/span&gt;</p> <p>Using v-html directive: <span><span style="color: red">This should be red.</span></span></p>
+
+<p>以上，有套用<code>v-html</code>屬性才會當作html語法輸出。</p>
+<h4 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h4><p>若我們有一些顯示區域是需要透過資料綁定及動態設定出現與否，則需透過<code>v-if</code>這個directive，可搭配使用 <code>v-else</code> <code>v-else-if</code>，可以在vue編譯時期就會去除符合條件之區塊。</p>
+<blockquote>
+<p>Html部份</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>No<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>以上，使用<code>ok</code>這個參數來控制h1區塊顯示與否</p>
+<h4 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h4><p>與<code>v-if</code>一樣，<code>v-show</code>亦是控制顯示區域出現與否，只是在於<code>v-show</code>是使用<code>html的style屬性display</code>控制顯示或隱藏。</p>
+<div class="alert danger no-icon"><p><code>v-if</code> Vs <code>v-show</code><br>若template一次性的顯示與否可以透過<code>v-if</code><br>若是頻繁變動顯示隱藏邏輯則透過<code>v-show</code>控制會使效能更好</p>
+</div>
+<p>以上，筆者稍微要再解釋一下，<code>頻繁變動顯示隱藏邏輯</code>這個狀況，可以想像一下，若套用<code>v-if</code>來控制的話，表示vue會在判斷到需隱藏時實際將dom元素移除，需顯示時將dom元素重新插入。dom操作效能問題參考 <a href="https://hk.saowen.com/a/c4539ce5769cb5e719437a12ec5d1021c3d3a768db92746794b41225de9c2497" target="_blank" rel="external">dom操作與優化探討</a>，因此最好不要因自己寫的邏輯觸發頻繁操作dom而造成效能瓶頸。</p>
+<h4 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h4><p>這個directive就是大家會經常用到的，頁面上經常會將撈到的資料利用<code>table</code>或<code>ul&gt;li</code>來呈現出來，最簡單的例子就是menu的顯示，查詢結果呈現。</p>
+<blockquote>
+<p>Html部份</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">        &#123;&#123; item.message &#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>Javascript部份</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> example1 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  el: <span class="string">'#example-1'</span>,</div><div class="line">  data: &#123;</div><div class="line">    items: [</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Foo'</span> &#125;,</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>效果如下</p>
+</blockquote>
+<ul><br>    <li>Foo</li><br>    <li>bar</li><br></ul> 
+
+<h5 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h5><p><code>v-for</code>支援陣列及物件，詳細資訊如下</p>
 <ul>
-<li>進入到專案資料夾</li>
+<li>v-for陣列部份</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd VueTestApp</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 可倒出陣列順序編號 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in items"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <ul>
-<li>安裝npm套件</li>
+<li>v-for物件部份</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 將各屬性值依序印出 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"value in obj"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- key為屬性名稱 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(value, key) in obj"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- index為屬性順序編號 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(value, key, index) in obj"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<div class="alert info"><p><code>v-for</code>中盡可能設定<code>key</code>屬性</p>
+</div>
+<p><code>v-for</code>中很重要的觀念是，vue有提供key屬性可以設定各item的識別欄位，使vue追縱更快速 <a href="https://vuejs.org/v2/guide/list.html#key" target="_blank" rel="external">參考</a>，因此筆者建議若每筆資料包含識別欄位則使用<code>v-bind</code>設定<code>key</code>屬性上去。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- content --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h5 id="變更偵測原理"><a href="#變更偵測原理" class="headerlink" title="變更偵測原理"></a>變更偵測原理</h5><div class="alert info"><p>陣列相關的操作/物件屬性值變更皆會使Vue重繪</p>
+</div>
+<p>官網上面還有提到陣列或物件變更偵測的機制，基本上變更偵測邏輯很容易理解</p>
 <ul>
-<li><code>npm run</code>方式執行Application</li>
+<li><p>陣列變更偵測邏輯</p>
+<ul>
+<li>陣列相關的操作<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">push()</div><div class="line">pop()</div><div class="line">shift()</div><div class="line">unshift()</div><div class="line">splice()</div><div class="line">sort()</div><div class="line">reverse()</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run dev</div></pre></td></tr></table></figure>
-<p>瀏覽<code>http://localhost:8080</code>，看到以下畫面，那就再次恭喜你了，達成成功撰寫vue application成就。</p>
-<img src="/Blog/2018/04/23/Vue系列文章一：Vue簡介/vue_app.jpg" alt="[vue_app]" title="[vue_app]">
+</li>
+<li><p>物件變更偵測邏輯</p>
+<ul>
+<li>物件屬性值變更</li>
+</ul>
+</li>
+</ul>
+<h5 id="變更偵測注意事項"><a href="#變更偵測注意事項" class="headerlink" title="變更偵測注意事項"></a>變更偵測注意事項</h5><div class="alert danger"><p>變更偵測注意事項請參考以下說明</p>
+</div>
+<ul>
+<li><p>陣列變更偵測注意事項<br>陣列相關變更偵測因<code>javascript</code>限制，除非是陣列的操作，若使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 針對某一筆資料的指定新的值</span></div><div class="line">vm.items[indexOfItem] = newValue</div><div class="line"><span class="comment">// 重新指定陣列長度</span></div><div class="line">vm.items.length = newLength</div></pre></td></tr></table></figure>
+<ul>
+<li><p>解決方式<br>針對以上的第一個問題，vue也提供變相的解法，需透過<code>vm.set</code>來通知變更</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Vue.set</span></div><div class="line">Vue.set(vm.items, indexOfItem, newValue)</div></pre></td></tr></table></figure>
+<p>或者使用<code>javascript</code>中<code>Array</code>技巧 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="external">參考</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 將某一個位置的值使用newValue代替</span></div><div class="line">vm.items.splice(itemIndex, <span class="number">1</span>, newValue)</div></pre></td></tr></table></figure>
+<p>針對第二個問題可使用<code>Array</code>技巧<code>Splice</code>來解</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vm.items.splice(newLength)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>物件變更偵測注意事項<br>基本上跟陣列雷同，物件動態新增屬性會使Vue無法偵測變更</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  data: &#123;</div><div class="line">    a: <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="comment">// `vm.a` 設定newValue可以被偵測變更</span></div><div class="line"></div><div class="line">vm.b = <span class="number">2</span></div><div class="line"><span class="comment">// `vm.b` 設定newValue則無法被偵測變更</span></div></pre></td></tr></table></figure>
+<p>  與陣列一樣的解法，需透過<code>vm.set</code>的方式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.set(vm.userProfile, <span class="string">'age'</span>, <span class="number">27</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="可搭配使用說明"><a href="#可搭配使用說明" class="headerlink" title="可搭配使用說明"></a>可搭配使用說明</h5><h6 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h6><p>我可以直接指定一個數字當作數值範圍結束值，透過<code>v-for</code>產生指定範圍內的數值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &lt;span v-<span class="keyword">for</span>=<span class="string">"n in 10"</span>&gt;&#123;&#123; n &#125;&#125; &lt;<span class="regexp">/span&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>div&gt;</div></pre></td></tr></table></figure></p>
+<h6 id="template"><a href="#template" class="headerlink" title="template"></a>template</h6><p>可使用於<code>template</code>內<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">  &lt;template v-<span class="keyword">for</span>=<span class="string">"item in items"</span>&gt;</div><div class="line">    &lt;li&gt;&#123;&#123; item.msg &#125;&#125;&lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">    &lt;li class="divider" role="presentation"&gt;&lt;/</span>li&gt;</div><div class="line">  &lt;<span class="regexp">/template&gt;</span></div><div class="line"><span class="regexp">&lt;/u</span>l&gt;</div></pre></td></tr></table></figure></p>
+<h6 id="v-if-1"><a href="#v-if-1" class="headerlink" title="v-if"></a>v-if</h6><p><code>v-for</code>同階層，再加上<code>v-if</code>來過濾資料，等於<code>符合v-if中宣告條件</code>才會被印出<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;li v-<span class="keyword">for</span>=<span class="string">"todo in todos"</span> v-<span class="keyword">if</span>=<span class="string">"!todo.isComplete"</span>&gt;</div><div class="line">  &#123;&#123; todo &#125;&#125;</div><div class="line">&lt;<span class="regexp">/li&gt;</span></div></pre></td></tr></table></figure></p>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
-<p>看完內容中的教學，應該可以感受到建置vue application並不困難，簡單幾個步驟即可開始撰寫，選vue準沒錯。</p>
-<p>最後筆者期許自己能夠寫完一系列的教學文，下一篇要來介紹一下webpack template建立之資料夾結構及各檔案的說明。</p>
+<p>筆者經驗來說，<code>v-html</code>非常少使用，除非撰寫的是<a href="https://zh.wikipedia.org/wiki/%E5%86%85%E5%AE%B9%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F" target="_blank" rel="external">CMS</a>相關系統，才需將使用者輸入及設定之html語法原始地呈現於畫面上。<code>v-if、v-show</code>會交替使用，選擇參考內文中比較，<code>v-for</code>最常使用，無論是將下拉式選單資料來源綁定於option中，Menu選單動態呈現，將查詢結果顯示於table中，但可以發現vue的directive不複雜，非常容易使用，那你還等什麼呢？</p>
 
             
         </div>
@@ -332,7 +369,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/"  data-tooltip="Vue系列文章二：VueWepackTemplate檔案結構介紹">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -340,7 +377,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/23/VSCode技巧：檔案比對差異/" data-tooltip="VSCode技巧：檔案比對差異">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/05/24/Vue系列文章三：Vue基本語法/" data-tooltip="Vue系列文章三：Vue基本語法">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -358,7 +395,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -366,7 +403,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -374,7 +411,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -388,7 +425,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -424,7 +461,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/"  data-tooltip="Vue系列文章二：VueWepackTemplate檔案結構介紹">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -432,7 +469,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/23/VSCode技巧：檔案比對差異/" data-tooltip="VSCode技巧：檔案比對差異">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/05/24/Vue系列文章三：Vue基本語法/" data-tooltip="Vue系列文章三：Vue基本語法">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -450,7 +487,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -458,7 +495,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -466,7 +503,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -480,7 +517,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -497,7 +534,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
                     <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
                 </a>
             </li>
@@ -505,7 +542,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
                     <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
                 </a>
             </li>
@@ -513,7 +550,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
                     <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
                 </a>
             </li>
@@ -805,9 +842,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/';
+                 this.page.url = 'http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/';
                  
-                    this.page.identifier = '2018/04/23/Vue系列文章一：Vue簡介/';
+                    this.page.identifier = '2018/06/22/Vue系列文章四：Vue Directive/';
                  
              };
             (function() {

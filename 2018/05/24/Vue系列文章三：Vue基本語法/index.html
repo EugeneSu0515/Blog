@@ -6,27 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Eugene Su">
-    <title>Vue系列文章一：Vue簡介 - Eugene Su</title>
+    <title>Vue系列文章三：Vue基本語法 - Eugene Su</title>
     <meta name="author" content="Eugene Su">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
-    <meta name="description" content="前提情要 目前公司開發產品選擇vue.js作為前端開發框架，選擇原因不外呼是  容易上手 考量到產品之後會由大陸團隊接手 Virtual Dom設計，效能方面不需要擔心">
+    <meta name="description" content="前提情要 前兩篇的基本設置教學，筆者相信大家已學會基本設定並撰寫vue application，此篇介紹基本語法及應用並說明。 此篇會以Vue官網教學順序為準，一一介紹其用法。 簡單介紹一下筆者接下來會使用的環境如下：  編輯器：VisualStudioCode Vue版本：2.4.2 &amp;uarr; Chrome Extension: Vue.js dev tools VsCode Extensi">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Vue系列文章一：Vue簡介">
-<meta property="og:url" content="http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/index.html">
+<meta property="og:title" content="Vue系列文章三：Vue基本語法">
+<meta property="og:url" content="http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/index.html">
 <meta property="og:site_name" content="Eugene Su">
-<meta property="og:description" content="前提情要 目前公司開發產品選擇vue.js作為前端開發框架，選擇原因不外呼是  容易上手 考量到產品之後會由大陸團隊接手 Virtual Dom設計，效能方面不需要擔心">
+<meta property="og:description" content="前提情要 前兩篇的基本設置教學，筆者相信大家已學會基本設定並撰寫vue application，此篇介紹基本語法及應用並說明。 此篇會以Vue官網教學順序為準，一一介紹其用法。 簡單介紹一下筆者接下來會使用的環境如下：  編輯器：VisualStudioCode Vue版本：2.4.2 &amp;uarr; Chrome Extension: Vue.js dev tools VsCode Extensi">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/Vue系列文章一：Vue簡介/vue_app.jpg">
-<meta property="og:updated_time" content="2018-04-25T03:52:42.038Z">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/05/24/Vue系列文章三：Vue基本語法/event_console_log.jpg">
+<meta property="og:updated_time" content="2018-06-25T06:49:56.080Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue系列文章一：Vue簡介">
-<meta name="twitter:description" content="前提情要 目前公司開發產品選擇vue.js作為前端開發框架，選擇原因不外呼是  容易上手 考量到產品之後會由大陸團隊接手 Virtual Dom設計，效能方面不需要擔心">
-<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/Vue系列文章一：Vue簡介/vue_app.jpg">
+<meta name="twitter:title" content="Vue系列文章三：Vue基本語法">
+<meta name="twitter:description" content="前提情要 前兩篇的基本設置教學，筆者相信大家已學會基本設定並撰寫vue application，此篇介紹基本語法及應用並說明。 此篇會以Vue官網教學順序為準，一一介紹其用法。 簡單介紹一下筆者接下來會使用的環境如下：  編輯器：VisualStudioCode Vue版本：2.4.2 &amp;uarr; Chrome Extension: Vue.js dev tools VsCode Extensi">
+<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2018/05/24/Vue系列文章三：Vue基本語法/event_console_log.jpg">
 <meta name="twitter:creator" content="@Eugene_Su">
     
         <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
@@ -235,14 +235,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Vue系列文章一：Vue簡介
+            Vue系列文章三：Vue基本語法
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2018-04-23T18:56:34+08:00">
+    <time itemprop="datePublished" datetime="2018-05-24T19:12:29+08:00">
 	
-		    4月 23, 2018
+		    5月 24, 2018
     	
     </time>
     
@@ -260,59 +260,117 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>目前公司開發產品選擇<a href="https://vuefe.cn/v2/guide/" target="_blank" rel="external">vue.js</a>作為前端開發框架，選擇原因不外呼是</p>
+<p>前兩篇的基本設置教學，筆者相信大家已學會基本設定並撰寫vue application，此篇介紹基本語法及應用並說明。</p>
+<p>此篇會以<a href="https://vuejs.org/v2/guide/" target="_blank" rel="external">Vue官網教學</a>順序為準，一一介紹其用法。</p>
+<p>簡單介紹一下筆者接下來會使用的環境如下：</p>
 <ul>
-<li>容易上手</li>
-<li>考量到產品之後會由大陸團隊接手</li>
-<li>Virtual Dom設計，效能方面不需要擔心</li>
+<li>編輯器：<a href="https://code.visualstudio.com/" target="_blank" rel="external">VisualStudioCode</a></li>
+<li>Vue版本：2.4.2 &uarr;</li>
+<li>Chrome Extension: <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd" target="_blank" rel="external">Vue.js dev tools</a></li>
+<li>VsCode Extension: <a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" target="_blank" rel="external">vetur</a></li>
+<li>Vue App結構採用<code>webpack full</code>Template專案</li>
 </ul>
 <a id="more"></a>
 <h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
-<p>產品開發之路是遙遠的路途，就決定好好研究它吧，起手式當然是要來寫一支<code>Hello World</code>程式。</p>
-<p>Vue的好處之一是若舊網站某些頁面很吃重前端效果則可考慮在該頁單獨使用它，可以感受model雙向綁定帶來的好處。這種方式只要將vue檔案載入就可以開始使用vue了。</p>
-<h3 id="使用vue方式一"><a href="#使用vue方式一" class="headerlink" title="使用vue方式一"></a>使用vue方式一</h3><blockquote>
-<p>載入vue.js檔案即可在頁面使用vue</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- body區塊結尾前宣告 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>載入完畢後，來初始化吧</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// script區塊中宣告</span></div><div class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  el: <span class="string">'#app'</span>,<span class="comment">//作用域</span></div><div class="line">  data: &#123;</div><div class="line">    message: <span class="string">'Hello Vue!'</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>最後套用於body區塊中，在任意<code>div</code>中套用id為app，在該範圍中vue就生效了。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- body區塊中宣告 --&gt;</span></div><div class="line"><span class="comment">&lt;!--對應作用域選取元素--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  &#123;&#123; message &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>完整html檔案如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Test Vue<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">      &#123;&#123;message&#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></div><div class="line"><span class="javascript">            el: <span class="string">'#app'</span>, <span class="comment">//作用域</span></span></div><div class="line"><span class="undefined">            data: &#123;</span></div><div class="line"><span class="javascript">                message: <span class="string">'Hello Vue!'</span></span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="使用vue方式二"><a href="#使用vue方式二" class="headerlink" title="使用vue方式二"></a>使用vue方式二</h3><blockquote>
-<p>利用vue-cli建立完整的前端專案</p>
-</blockquote>
-<p>首先要先提到vue-cli工具，可透過<a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a>進行安裝，指令如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g vue-cli</div></pre></td></tr></table></figure>
-<p>使用<code>vue --version</code>來確認是否安裝成功，若出現版號，恭喜你成功了(筆者這邊環境是會出現<code>2.8.2</code>)。我們可以使用<code>vue help</code>來觀看一下支援哪些command吧。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">λ  vue help</div><div class="line"></div><div class="line">  Usage: vue &lt;command&gt; [options]</div><div class="line"></div><div class="line"></div><div class="line">  Options:</div><div class="line"></div><div class="line">    -V, --version  output the version number</div><div class="line">    -h, --help     output usage information</div><div class="line"></div><div class="line"></div><div class="line">  Commands:</div><div class="line"></div><div class="line">    init        generate a new project from a template</div><div class="line">    list        list available official templates</div><div class="line">    build       prototype a new project</div><div class="line">    help [cmd]  display help for [cmd]</div></pre></td></tr></table></figure>
-<p>我們等等建立vue application時會使用到<code>list</code> <code>init</code>指令來完成。</p>
-<p>首先先使用<code>vue list</code>觀看一下有哪些現成template可使用，參考如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">λ  vue list</div><div class="line"></div><div class="line">  Available official templates:</div><div class="line"></div><div class="line">  ★  browserify - A full-featured Browserify + vueify setup with hot-reload, linting &amp; unit testing.</div><div class="line">  ★  browserify-simple - A simple Browserify + vueify setup for quick prototyping.</div><div class="line">  ★  pwa - PWA template for vue-cli based on the webpack template</div><div class="line">  ★  simple - The simplest possible Vue setup in a single HTML file</div><div class="line">  ★  webpack - A full-featured Webpack + vue-loader setup with hot reload, linting, testing &amp; css extraction.</div><div class="line">  ★  webpack-simple - A simple Webpack + vue-loader setup for quick prototyping.</div></pre></td></tr></table></figure>
-<p>若使用vue撰寫純前端的application則建議直衝webpack(full)，主要支援<code>hot reload</code>，亦可選擇並設定好<code>router</code>相關設定。跟著筆者一起建立vue application吧。</p>
+<h1 id="table-of-contents">目錄</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前提情要"><span class="toc-text">前提情要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#內容"><span class="toc-text">內容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mustache語法"><span class="toc-text">Mustache語法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-bind"><span class="toc-text">v-bind</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#介紹語法"><span class="toc-text">介紹語法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-on"><span class="toc-text">v-on</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#介紹語法-1"><span class="toc-text">介紹語法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#event參數"><span class="toc-text">$event參數</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#event-modifiers-修飾符"><span class="toc-text">event modifiers(修飾符)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#key-modifires-修飾符"><span class="toc-text">key modifires(修飾符)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用javascript表達式"><span class="toc-text">使用javascript表達式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#結論"><span class="toc-text">結論</span></a></li></ol>
+<h3 id="Mustache語法"><a href="#Mustache語法" class="headerlink" title="Mustache語法"></a>Mustache語法</h3><p>我們就從<code>Mustache語法</code>開始說起，我們資料綁定顯示時需使用<code>Mustache語法</code>，以兩個大刮號包起參數名稱。</p>
+<ul>
+<li><p>Html部份</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Message: &#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Javascript部份</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</div><div class="line">    data()&#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            msg: <span class="string">"Hello World"</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>效果如下<br><span>Hello World</span> </p>
+</li>
+</ul>
+<h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><h4 id="介紹語法"><a href="#介紹語法" class="headerlink" title="介紹語法"></a>介紹語法</h4><p>若想要動態設定html控制項屬性，則無法使用<code>Mustache語法</code>，需使用<code>v-bind</code>關鍵字，套用如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"dynamicId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>我們會在data區塊綁定其<code>dynamicId</code>的值，再透過<code>v-bind</code>directive可以動態設定id值。再舉一個簡單例子，我們在頁面上表單會有下拉式選單，我們會透過呼叫API取得source後，render於下拉式選單元件上，這時也是得透過<code>v-bind</code>來綁定，範例如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">"form-control"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">v-bind:value</span>=<span class="string">"item.value"</span> </span></div><div class="line"><span class="tag">        <span class="attr">v-for</span>=<span class="string">"item in selectedOptions"</span>&gt;</span></div><div class="line">        &#123;&#123;item.text&#125;&#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">option</span>&gt;</span>   </div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
 <blockquote>
-<p>使用<code>init</code>初始化專案，<code>webpack</code>關鍵字為選擇vue-cli提供之webpack template，最後名稱是專案名稱，使用<code>VueTestApp</code>。</p>
+<p>以上範例，使用<code>v-bind</code>指定其option的value值<br><code>v-for</code>可以先行忽略，下篇會有詳細的說明</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vue init webpack VueTestApp</div></pre></td></tr></table></figure>
-<p>執行步驟為</p>
+<p>針對<code>v-bind</code>directive，我們可以簡寫為<code>:</code>表示。</p>
 <ul>
-<li>進入到專案資料夾</li>
+<li><p>原始</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"dynamicId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>簡寫後</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:id</span>=<span class="string">"dynamicId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>簡寫後版面乾淨許多，不過這個完全看個人的習慣，沒有好壞對錯之分</p>
+</blockquote>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd VueTestApp</div></pre></td></tr></table></figure>
+<p><code>v-bind</code>基本上對於任何html屬性皆可動態綁定，官網針對class與style綁定有特別說明，筆者就不再多加敘述，請參考<a href="https://vuejs.org/v2/guide/class-and-style.html" target="_blank" rel="external">class與style綁定</a>章節。</p>
+<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><h4 id="介紹語法-1"><a href="#介紹語法-1" class="headerlink" title="介紹語法"></a>介紹語法</h4><p>任何Html原生事件event皆可透過<code>v-on</code>做監聽，最簡單例子就是</p>
 <ul>
-<li>安裝npm套件</li>
+<li><p>Html部份</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"someMethod()"</span>&gt;</span>按我觸發click事件<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Javascript部份</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span>(&#123;</div><div class="line">    name: <span class="string">'MyComponent'</span>,</div><div class="line">    data()&#123;<span class="keyword">return</span>&#123;&#125;&#125;,</div><div class="line">    methods:&#123;</div><div class="line">        someMethod: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            alert(<span class="string">'Click Event Trigger!!'</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>效果如下</p>
+<button onclick="alert('Click Event Trigger!!');">按我觸發click事件</button>
+
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<p>針對<code>v-on</code>directive，我們可以簡寫為<code>@</code>表示。</p>
 <ul>
-<li><code>npm run</code>方式執行Application</li>
+<li><p>原始</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"someMethod()"</span>&gt;</span>按我觸發click事件<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>簡寫後</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"someMethod()"</span>&gt;</span>按我觸發click事件<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run dev</div></pre></td></tr></table></figure>
-<p>瀏覽<code>http://localhost:8080</code>，看到以下畫面，那就再次恭喜你了，達成成功撰寫vue application成就。</p>
-<img src="/Blog/2018/04/23/Vue系列文章一：Vue簡介/vue_app.jpg" alt="[vue_app]" title="[vue_app]">
+<h4 id="event參數"><a href="#event參數" class="headerlink" title="$event參數"></a>$event參數</h4><p>我們就以上面的<code>@click</code>例子來看看，function中傳入$event參數，看他到底是為何物？筆者就改寫一下呼叫的method中加入$event參數</p>
+<ul>
+<li>html部份</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">click</span>=<span class="string">'someMethod($event)'</span>&gt;</span>點我看$event<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>javascript部份(僅貼出methods options區塊)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">methods: &#123;</div><div class="line">    someMethod: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(event);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我們來看一下印出來的結果吧</p>
+<img src="/Blog/2018/05/24/Vue系列文章三：Vue基本語法/event_console_log.jpg" alt="[event_console_log]" title="[event_console_log]">
+<p>以上，event的資料，做進一步的判斷及處理是很夠的，但vue本身也有提供一些常見的處理包裝而成的修飾符，我們就來看下一節的介紹。</p>
+<h4 id="event-modifiers-修飾符"><a href="#event-modifiers-修飾符" class="headerlink" title="event modifiers(修飾符)"></a>event modifiers(修飾符)</h4><p>若有撰寫過<code>jquery</code>，應該對於<code>preventDefault()</code>不陌生才對，等於html原生觸發的事件先行濾掉，只執行自行撰寫的處理邏輯，vue這邊提供相對應的修飾符可套用於<code>v-on</code>中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.prevent</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>目前提供的修飾符有</p>
+<ul>
+<li>stop</li>
+<li>prevent</li>
+<li>capture</li>
+<li>self</li>
+<li>once<code>vue2.1.4以後版本才有</code></li>
+<li>passive<code>vue2.3.0以後版本才有</code></li>
+</ul>
+<p>官網的範例就已經滿清楚的<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- the click event's propagation will be stopped --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- the submit event will no longer reload the page --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">"onSubmit"</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- modifiers can be chained --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop.prevent</span>=<span class="string">"doThat"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- just the modifier --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- use capture mode when adding the event listener --&gt;</span></div><div class="line"><span class="comment">&lt;!-- i.e. an event targeting an inner element is handled here before being handled by that element --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.capture</span>=<span class="string">"doThis"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- only trigger handler if event.target is the element itself --&gt;</span></div><div class="line"><span class="comment">&lt;!-- i.e. not from a child element --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.self</span>=<span class="string">"doThat"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h4 id="key-modifires-修飾符"><a href="#key-modifires-修飾符" class="headerlink" title="key modifires(修飾符)"></a>key modifires(修飾符)</h4><p>顧名思義，在監聽<code>keyup</code>事件時，可加修飾符，更精確的指定是哪一個按鍵，vue提供已包裝好常見的如下</p>
+<ul>
+<li>enter</li>
+<li>tab</li>
+<li>delete <code>delete鍵和backspace鍵皆會觸發</code></li>
+<li>esc</li>
+<li>space</li>
+<li>up</li>
+<li>down</li>
+<li>left</li>
+<li>right</li>
+</ul>
+<p>這邊vue提供一個擴充點，若我們想監聽的按鍵不在上面列的裡面，全域的設定按鍵對應的keycode<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// enable `v-on:keyup.f1`</span></div><div class="line">Vue.config.keyCodes.f1 = <span class="number">112</span></div></pre></td></tr></table></figure></p>
+<p>以上的設定後，我們在頁面上使用<code>v-on:keyup.f1</code>的方式監聽keycode為112的F1按鍵事件。若想知道哪些按鍵的對應keycode，可以玩一下這個網站 <a href="http://keycode.info/" target="_blank" rel="external">keycode.info</a>，滿有趣的。想要直接看完整的對應資訊，可以參考這個mozilla提供的<a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode" target="_blank" rel="external">keycode列表</a>。</p>
+<p>若不想自行定義，vue在<code>2.5.0版本後</code>提供自動對應keycode，意即會將<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> @<span class="attr">keyup.page-down</span>=<span class="string">"onPageDown"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>vue會很聰明的幫你轉換成<code>$event.key === &#39;PageDown&#39;</code>，但是要記得不包含那種有爭議性的按鍵，例如在<code>IE9</code>環境中很多keycode，如<code>esc</code>及其他<code>箭頭按鍵</code>會與其他瀏覽器環境是不一樣的。這樣筆者會建議以全域的方式自行定義keycode來使用相對保險。還有一些進階的系統按鍵、組合鍵及滑鼠鍵議題，筆者就不在此列出，參考<a href="https://vuejs.org/v2/guide/events.html#System-Modifier-Keys" target="_blank" rel="external">官網介紹</a>。</p>
+<h3 id="使用javascript表達式"><a href="#使用javascript表達式" class="headerlink" title="使用javascript表達式"></a>使用javascript表達式</h3><p>你可以在<code>Mustache語法</code>或其他任何資料綁定方式中寫上javascript運算邏輯。例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; number + 1 &#125;&#125;</div><div class="line"></div><div class="line">&#123;&#123; ok ? 'YES' : 'NO' &#125;&#125;</div><div class="line"></div><div class="line">&#123;&#123; message.split('').reverse().join('') &#125;&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"'list-' + id"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<div class="alert danger"><p>基於程式閱讀及擴充性，筆者建議盡量少使用這種內嵌式javascript運算邏輯，盡量使用methods/computed/watch等來取代，應該把javascript邏輯寫在script區塊中</p>
+</div>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
-<p>看完內容中的教學，應該可以感受到建置vue application並不困難，簡單幾個步驟即可開始撰寫，選vue準沒錯。</p>
-<p>最後筆者期許自己能夠寫完一系列的教學文，下一篇要來介紹一下webpack template建立之資料夾結構及各檔案的說明。</p>
+<p>以上，主要是介紹了<code>Mustache語法</code> 、透過<code>v-bind</code>html屬性值動態生成及使用<code>v-on</code>監聽html原生事件。或許單學這些語法會覺得無趣，且第一次看的話應該也不會有特別的感覺，筆者建議是要記住vue做得到哪些東西，等於是<code>大標題要記得</code>，實際撰寫時忘記了的話再查官網的範例即可，筆者寫此篇目的也是如此，希望也有幫助到你，下篇再見。</p>
 
             
         </div>
@@ -332,7 +390,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/"  data-tooltip="Vue系列文章二：VueWepackTemplate檔案結構介紹">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/06/22/Vue系列文章四：Vue Directive/"  data-tooltip="Vue系列文章四：Vue Directive">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -340,7 +398,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/23/VSCode技巧：檔案比對差異/" data-tooltip="VSCode技巧：檔案比對差異">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/" data-tooltip="Vue系列文章二：VueWepackTemplate檔案結構介紹">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -358,7 +416,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -366,7 +424,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -374,7 +432,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -388,7 +446,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -424,7 +482,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/"  data-tooltip="Vue系列文章二：VueWepackTemplate檔案結構介紹">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/06/22/Vue系列文章四：Vue Directive/"  data-tooltip="Vue系列文章四：Vue Directive">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -432,7 +490,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/23/VSCode技巧：檔案比對差異/" data-tooltip="VSCode技巧：檔案比對差異">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/" data-tooltip="Vue系列文章二：VueWepackTemplate檔案結構介紹">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -450,7 +508,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -458,7 +516,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -466,7 +524,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -480,7 +538,7 @@
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -497,7 +555,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
                     <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
                 </a>
             </li>
@@ -505,7 +563,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
                     <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
                 </a>
             </li>
@@ -513,7 +571,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
                     <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
                 </a>
             </li>
@@ -805,9 +863,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/';
+                 this.page.url = 'http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/';
                  
-                    this.page.identifier = '2018/04/23/Vue系列文章一：Vue簡介/';
+                    this.page.identifier = '2018/05/24/Vue系列文章三：Vue基本語法/';
                  
              };
             (function() {
