@@ -6,29 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Eugene Su">
-    <title>VSCode技巧：檔案比對差異 - Eugene Su</title>
+    <title>標籤: axios - Eugene Su</title>
     <meta name="author" content="Eugene Su">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
-    <meta name="description" content="前提情要 多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中router/index.js，每個人的各自component需要import與設定其url，筆者公司採用svn作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。 時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。">
-<meta name="keywords" content="vscode,compare file">
-<meta property="og:type" content="blog">
-<meta property="og:title" content="VSCode技巧：檔案比對差異">
-<meta property="og:url" content="http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/index.html">
+    <meta property="og:type" content="blog">
+<meta property="og:title" content="Eugene Su">
+<meta property="og:url" content="http://eugenesu0515.github.io/tags/axios/index.html">
 <meta property="og:site_name" content="Eugene Su">
-<meta property="og:description" content="前提情要 多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中router/index.js，每個人的各自component需要import與設定其url，筆者公司採用svn作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。 時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/VSCode技巧：檔案比對差異/SelectForCompare.jpg">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareWithSelected.jpg">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareResult.jpg">
-<meta property="og:updated_time" content="2018-04-23T11:02:44.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSCode技巧：檔案比對差異">
-<meta name="twitter:description" content="前提情要 多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中router/index.js，每個人的各自component需要import與設定其url，筆者公司採用svn作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。 時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。">
-<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2018/04/23/VSCode技巧：檔案比對差異/SelectForCompare.jpg">
+<meta name="twitter:title" content="Eugene Su">
 <meta name="twitter:creator" content="@Eugene_Su">
     
         <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
@@ -60,7 +51,7 @@
         
     
 
-<header id="header" data-behavior="5">
+<header id="header" data-behavior="2">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/Blog/ ">Eugene Su</a>
@@ -84,7 +75,7 @@
         
     
 
-<nav id="sidebar" data-behavior="5">
+<nav id="sidebar" data-behavior="2">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -226,159 +217,65 @@
 </nav>
 
             
-            <div id="main" data-behavior="5"
+            <div id="main" data-behavior="2"
                  class="
                         hasCoverMetaIn
                         ">
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    <section class="postShorten-group main-content-wrap">
     
     
-        <div class="post-header main-content-wrap text-left">
-    
-        <h1 class="post-title" itemprop="headline">
-            VSCode技巧：檔案比對差異
-        </h1>
-    
-    
-        <div class="post-meta">
-    <time itemprop="datePublished" datetime="2018-04-23T08:45:08+08:00">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/Blog/2018/06/25/Vue套件介紹：axios/">
+                            Vue套件介紹：axios
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2018-06-25T17:58:30+08:00">
 	
-		    4月 23, 2018
+		    6月 25, 2018
     	
     </time>
     
         <span>分類 </span>
         
-    <a class="category-link" href="/Blog/categories/vscode/">vscode</a>
+    <a class="category-link" href="/Blog/categories/vue/">vue</a>
 
 
     
 </div>
-
-    
-</div>
-    
-    <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-            <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中<code>router/index.js</code>，每個人的各自component需要import與設定其url，筆者公司採用<a href="https://subversion.apache.org/" target="_blank" rel="external">svn</a>作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。</p>
-<p>時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。</p>
-<p>因有layout關係，必須將其他component所屬url必須放置於layout的children設定中，有些人沒有仔細看就直接將設定寫在layout同層，有些url還被設定到兩次，太氣了，讓筆者murmur一下。</p>
-<a id="more"></a>
-<h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
-<p>所以筆者就把layout同層的剪下後貼到另一支新開的檔案中，想要與原檔案比對的方式，把重複的整理一下並塞回正常的設定階層中。有上網找一下檔案比對的工具，例如：<a href="https://free.com.tw/diffchecker/" target="_blank" rel="external">diffchecker</a>，但總覺得不想離開vscode去操作其他軟體阿，索性搜索一下vscode是否具備檔案比對功能，太神拉，還真的有。</p>
-<p>我們就以vue預設webpack template中的router/index.js為例，再新增一個檔案，將原本的貼上後多一個數字2。</p>
-<ul>
-<li>第一步驟需在欲比對的新檔案上按右鍵選擇<code>Select for compare</code></li>
-</ul>
-<img src="/Blog/2018/04/23/VSCode技巧：檔案比對差異/SelectForCompare.jpg" alt="[SelectForCompare]" title="[SelectForCompare]">
-<ul>
-<li>第二步驟則在欲比對的原始檔案上按右鍵選擇<code>Compare with Selected</code></li>
-</ul>
-<img src="/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareWithSelected.jpg" alt="[CompareWithSelected]" title="[CompareWithSelected]">
-<ul>
-<li>比對成就達成</li>
-</ul>
-<img src="/Blog/2018/04/23/VSCode技巧：檔案比對差異/CompareResult.jpg" alt="[CompareWithSelected]" title="[CompareWithSelected]">
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
-<p>當然上述例子應該透過改善程式上版流程且遇到衝突時應該就要被解決，千萬不要學筆者積了一堆route設定後才來調，心臟要很大顆阿。</p>
-<p>使用vscode來比對檔案，有一種熟悉的感覺-版空中的解決衝突的畫面，對於有版空習慣的程式撰寫者來說，應該是很容易看出不一樣的地方，非常推薦給大家。</p>
-
-            
-        </div>
-    </div>
-    <div id="post-footer" class="post-footer main-content-wrap">
-        
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/compare-file/">compare file</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vscode/">vscode</a>
 
             </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+                    
+                        <a href="/Blog/2018/06/25/Vue套件介紹：axios/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
         
         
-            <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/23/Vue系列文章一：Vue簡介/"  data-tooltip="Vue系列文章一：Vue簡介">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/" data-tooltip="VSCode技巧：vue開發套件vetur相關設定">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
-                    <i class="fa fa-facebook-official"></i>
-                </a>
-            </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
-                    <i class="fa fa-google-plus"></i>
-                </a>
-            </li>
-        
-        
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
+        <li class="pagination-number">第 1 頁 共 1 頁</li>
     </ul>
 </div>
 
-
-        
-        
-            
-                <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-            
-        
-    </div>
-</article>
-
+</section>
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -388,110 +285,6 @@
 </footer>
 
             </div>
-            
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
-                    <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/23/Vue系列文章一：Vue簡介/"  data-tooltip="Vue系列文章一：Vue簡介">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/" data-tooltip="VSCode技巧：vue開發套件vetur相關設定">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
-                    <i class="fa fa-facebook-official"></i>
-                </a>
-            </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>
-        
-            
-            
-            <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
-                    <i class="fa fa-google-plus"></i>
-                </a>
-            </li>
-        
-        
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-
-
-                </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="5">
-    <i id="btn-close-shareoptions" class="fa fa-close"></i>
-    <ul class="share-options">
-        
-            
-            
-            <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
-                    <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-                </a>
-            </li>
-        
-            
-            
-            <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
-                    <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-                </a>
-            </li>
-        
-            
-            
-            <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
-                    <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
-                </a>
-            </li>
-        
-    </ul>
-</div>
-
             
         </div>
         
@@ -792,25 +585,6 @@
         <!--SCRIPTS-->
 <script src="/Blog/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
 <!--SCRIPTS END-->
-
-    
-        <script>
-             var disqus_config = function () {
-                 this.page.url = 'http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/';
-                 
-                    this.page.identifier = '2018/04/23/VSCode技巧：檔案比對差異/';
-                 
-             };
-            (function() {
-                var d = document, s = d.createElement('script');
-                var disqus_shortname = 'EugeneSu';
-                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-    
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
