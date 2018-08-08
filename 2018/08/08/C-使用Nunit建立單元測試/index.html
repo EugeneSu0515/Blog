@@ -6,20 +6,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Eugene Su">
-    <title>Eugene Su</title>
+    <title>[C#]使用Nunit建立單元測試 - Eugene Su</title>
     <meta name="author" content="Eugene Su">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="Eugene Su">
-<meta property="og:url" content="http://eugenesu0515.github.io/index.html">
+    <meta name="description" content="前提情要 筆者工作經驗也已快七年，一直都是以C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。 若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為">
+<meta name="keywords" content="C# Nunit">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="[C#]使用Nunit建立單元測試">
+<meta property="og:url" content="http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/index.html">
 <meta property="og:site_name" content="Eugene Su">
+<meta property="og:description" content="前提情要 筆者工作經驗也已快七年，一直都是以C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。 若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/08/08/C-使用Nunit建立單元測試/Nuget_Nunit.jpg">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/08/08/C-使用Nunit建立單元測試/VS_Extension_Nunit_3_Adapter.jpg">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/08/08/C-使用Nunit建立單元測試/First_Test_Case.jpg">
+<meta property="og:updated_time" content="2018-08-08T15:31:01.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eugene Su">
+<meta name="twitter:title" content="[C#]使用Nunit建立單元測試">
+<meta name="twitter:description" content="前提情要 筆者工作經驗也已快七年，一直都是以C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。 若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為">
+<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2018/08/08/C-使用Nunit建立單元測試/Nuget_Nunit.jpg">
 <meta name="twitter:creator" content="@Eugene_Su">
     
         <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
@@ -51,7 +60,7 @@
         
     
 
-<header id="header" data-behavior="2">
+<header id="header" data-behavior="5">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/Blog/ ">Eugene Su</a>
@@ -75,7 +84,7 @@
         
     
 
-<nav id="sidebar" data-behavior="2">
+<nav id="sidebar" data-behavior="5">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -217,25 +226,22 @@
 </nav>
 
             
-            <div id="main" data-behavior="2"
+            <div id="main" data-behavior="5"
                  class="
                         hasCoverMetaIn
                         ">
-                <section class="postShorten-group main-content-wrap">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/08/08/C-使用Nunit建立單元測試/">
-                            [C#]使用Nunit建立單元測試
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            [C#]使用Nunit建立單元測試
+        </h1>
+    
+    
+        <div class="post-meta">
     <time itemprop="datePublished" datetime="2018-08-08T23:30:40+08:00">
 	
 		    8月 08, 2018
@@ -250,458 +256,132 @@
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
 <p>筆者工作經驗也已快七年，一直都是以C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。</p>
-<p>若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為線上產品，必須寫撰寫單元測試來保護邏輯的正確性。筆者最後選擇Nunit測試框架，接下來就簡單介紹該套件。<br>
-                    
-                        <a href="/Blog/2018/08/08/C-使用Nunit建立單元測試/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/06/25/Vue套件介紹：axios/">
-                            Vue套件介紹：axios
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2018-06-25T17:58:30+08:00">
-	
-		    6月 25, 2018
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vue/">vue</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>筆者在公司的專案開發上選擇vue作為前端開發framework，不外呼就是開發應用程式，當然免不了基本的CRUD功能，此時需要一個強而有力的呼叫API套件，之所以選擇<code>axios</code>，沒有爾外的原因，因為是vue作者推薦使用，這樣不需有任何的疑慮，用下去就對了，此篇就以<code>axios</code>來探討其用法介紹及經驗分享。<br>
-                    
-                        <a href="/Blog/2018/06/25/Vue套件介紹：axios/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/06/25/Vue系列文章五：Vue-Instance與Component/">
-                            Vue系列文章五：Vue Instance與Component
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2018-06-25T16:55:30+08:00">
-	
-		    6月 25, 2018
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vue/">vue</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>前面兩篇講了vue相關的語法，是不是覺得少了點什麼，這篇是重頭戲，介紹Vue Instance宣告時有哪些options可設定，有什麼樣的相關技巧以及Component的應用，筆者就以自身開發角度分享實戰經驗。<br>
-                    
-                        <a href="/Blog/2018/06/25/Vue系列文章五：Vue-Instance與Component/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/06/22/Vue系列文章四：Vue Directive/">
-                            Vue系列文章四：Vue Directive
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2018-06-22T13:44:15+08:00">
-	
-		    6月 22, 2018
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vue/">vue</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>前一篇已介紹了Vue基本語法，筆者相信應該是有辦法撰寫簡單的邏輯，接下來這一篇介紹<code>v開頭directive</code>相關技巧及知識，筆者使用工具及環境參考上一篇「Vue基本語法」。<br>
-                    
-                        <a href="/Blog/2018/06/22/Vue系列文章四：Vue Directive/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/05/24/Vue系列文章三：Vue基本語法/">
-                            Vue系列文章三：Vue基本語法
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2018-05-24T19:12:29+08:00">
-	
-		    5月 24, 2018
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vue/">vue</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>前兩篇的基本設置教學，筆者相信大家已學會基本設定並撰寫vue application，此篇介紹基本語法及應用並說明。</p>
-<p>此篇雖然想以<a href="https://vuejs.org/v2/guide/" target="_blank" rel="external">Vue官網教學</a>順序做介紹，但筆者認為已學會某種技術，應該是要以自己角度分類並介紹，且要加上經驗分享，還可藉由驗證自己的不足，因此若不習慣內容編排方式，多加見諒。</p>
-<p>簡單介紹一下筆者接下來會使用的環境如下：</p>
+<p>若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為線上產品，必須寫撰寫單元測試來保護邏輯的正確性。筆者最後選擇Nunit測試框架，接下來就簡單介紹該套件。<br><a id="more"></a></p>
+<h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
+<p>Nunit操作步驟如下：</p>
 <ul>
-<li>編輯器：<a href="https://code.visualstudio.com/" target="_blank" rel="external">VisualStudioCode</a></li>
-<li>Vue版本：2.4.2 &uarr;</li>
-<li>Chrome Extension: <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd" target="_blank" rel="external">Vue.js dev tools</a></li>
-<li>VsCode Extension: <a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" target="_blank" rel="external">vetur</a></li>
-<li>Vue App結構採用<code>webpack full</code>Template專案</li>
+<li>我們就建立主控台應用程式當作Nunit測試專案<ul>
+<li>.net framework 4.6.2</li>
+<li>Console Application Template</li>
 </ul>
-                    
-                        <a href="/Blog/2018/05/24/Vue系列文章三：Vue基本語法/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
-                            Vue系列文章二：VueWepackTemplate檔案結構介紹
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2018-04-25T13:09:37+08:00">
-	
-		    4月 25, 2018
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vue/">vue</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>上一篇介紹到<code>vue-cli</code>建立vue application，其中筆者示範選擇以<code>webpack template</code>作為預設專案結構。這一篇就來簡單介紹一下專案中的檔案結構以及經驗分享。</p>
-                    
-                        <a href="/Blog/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/04/23/Vue系列文章一：Vue簡介/">
-                            Vue系列文章一：Vue簡介
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2018-04-23T18:56:34+08:00">
-	
-		    4月 23, 2018
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vue/">vue</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>目前公司開發產品選擇<a href="https://vuefe.cn/v2/guide/" target="_blank" rel="external">vue.js</a>作為前端開發框架，選擇原因不外呼是</p>
-<ul>
-<li>容易上手</li>
-<li>考量到產品之後會由大陸團隊接手</li>
-<li>Virtual Dom設計，效能方面不需要擔心</li>
+</li>
+<li>專案中透過<a href="https://www.nuget.org/" target="_blank" rel="external">nuget</a>安裝<a href="https://nunit.org/" target="_blank" rel="external">Nunit</a><img src="/Blog/2018/08/08/C-使用Nunit建立單元測試/Nuget_Nunit.jpg" alt="[Nuget_Nunit]" title="[Nuget_Nunit]"></li>
+<li>接下來需安裝vs擴充套件<code>NUnit3TestAdapter</code>在專案中跑測試<img src="/Blog/2018/08/08/C-使用Nunit建立單元測試/VS_Extension_Nunit_3_Adapter.jpg" alt="[VS_Extension_Nunit_3_Adapter]" title="[VS_Extension_Nunit_3_Adapter]"></li>
+<li>一開始還不熟悉可以下載<a href="https://github.com/nunit/nunit-csharp-samples" target="_blank" rel="external">C#Samples</a>來看看</li>
+<li>跟著筆者試試看簡單的例子吧，單元測試、TDD這些名詞已經是91哥的代名詞了，我們就來參考他寫的範例，使用Nunit跟著操作一遍吧，參考<a href="https://dotblogs.com.tw/hatelove/2012/11/07/learning-tdd-in-30-days-day3-how-to-write-a-unit-test-code" target="_blank" rel="external">[30天快速上手TDD][Day 3]動手寫 Unit Test</a>。</li>
+<li>我們在專案建立兩個資料夾區分production及test code:<code>source</code>及<code>tests</code></li>
+<li><p>建立<code>Calculator</code>class及撰寫<code>Add</code>function</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Calculator</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Add</span>(<span class="params"><span class="keyword">int</span> firstNumber, <span class="keyword">int</span> secondNumber</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> firstNumber + secondNumber;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>建立<code>CalculatorTest</code>檔案並撰寫我們的第一個單元測試</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[<span class="meta">TestFixture</span>]</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CalculatorTest</span></div><div class="line">&#123;</div><div class="line">    [<span class="meta">Test</span>]</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Add_Input_First_1_Second_2_Return_3</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="comment">//arrange</span></div><div class="line">        <span class="keyword">var</span> target =  <span class="keyword">new</span> Calculator();</div><div class="line">        <span class="keyword">var</span> firstNumber = <span class="number">1</span>;</div><div class="line">        <span class="keyword">var</span> secondNumber = <span class="number">2</span>;</div><div class="line">        <span class="keyword">var</span> expected = <span class="number">3</span>;</div><div class="line">        <span class="comment">//act</span></div><div class="line">        <span class="keyword">var</span> actual = target.Add(firstNumber, secondNumber);</div><div class="line">        <span class="comment">//assert</span></div><div class="line">        Assert.AreEqual(expected, actual);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-                    
-                        <a href="/Blog/2018/04/23/Vue系列文章一：Vue簡介/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
+<p>以上主要要解釋的是在Test Class中必須套上<code>TextFixture</code>讓Nunit識別為測試類別，測試方法則需套上<code>Test</code>Attribute，寫法與MSTest相似。<br><img src="/Blog/2018/08/08/C-使用Nunit建立單元測試/First_Test_Case.jpg" alt="[First_Test_Case]" title="[First_Test_Case]"></p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
+<p>以上，筆者建立了很簡易的Nunit測試專案並完成第一個測試案例，筆者預計再寫幾篇介紹Nunit其他的屬性及設定，此篇的範例檔案在此<a href="https://github.com/EugeneSu0515/NunitDemo" target="_blank" rel="external">NunitDemo</a>，筆者會繼續使用該專案擴充其他範例，下篇再見了。</p>
+
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/04/23/VSCode技巧：檔案比對差異/">
-                            VSCode技巧：檔案比對差異
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2018-04-23T08:45:08+08:00">
-	
-		    4月 23, 2018
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vscode/">vscode</a>
-
-
-    
-</div>
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/C-Nunit/">C# Nunit</a>
 
             </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中<code>router/index.js</code>，每個人的各自component需要import與設定其url，筆者公司採用<a href="https://subversion.apache.org/" target="_blank" rel="external">svn</a>作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。</p>
-<p>時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。</p>
-<p>因有layout關係，必須將其他component所屬url必須放置於layout的children設定中，有些人沒有仔細看就直接將設定寫在layout同層，有些url還被設定到兩次，太氣了，讓筆者murmur一下。</p>
-                    
-                        <a href="/Blog/2018/04/23/VSCode技巧：檔案比對差異/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
-                            VSCode技巧：vue開發套件vetur相關設定
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2018-04-21T21:33:38+08:00">
-	
-		    4月 21, 2018
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vscode/">vscode</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>目前專案選擇<a href="https://vuejs.org/" target="_blank" rel="external">vue.js</a>作為前端開發使用Framework，開發工具選擇VsCode的狀況下，筆者搜尋一下相關plugins，發現<a href="https://github.com/vuejs/vetur" target="_blank" rel="external">vetur</a>下載率很高，含基本的</p>
-<ul>
-<li><code>syntax highlighting</code> </li>
-<li><code>Snippet</code> </li>
-<li><code>Auto Completion</code></li>
-</ul>
-<p>對筆者來說已足夠，趕緊下載來試用。稍微觀看一下該套件格式化相關設定，對於vue webpack template開發來說，需要再手動設定。</p>
-                    
-                        <a href="/Blog/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/">
-                            VSCode技巧：解決RazorView中Emmet失效問題
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-09-16T21:44:40+08:00">
-	
-		    9月 16, 2017
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/Blog/categories/vscode/">vscode</a>
-
-
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>身為Web及.net MVC開發者來說，多多少少會有機會寫到Razor View。筆者因工作上曾擔任過SA一陣子，工作內容包含劃Prototype頁面與客戶溝通作業流程及操作方式，當時案子套版基底是使用<a href="https://getbootstrap.com/docs/3.3/" target="_blank" rel="external">Bootstrap3</a>，知道需要長時間使用Bootstrap，因此筆者有下功夫熟悉它的css class。且那時有幸已知道<strong>ZenCoding</strong>(Emmet)這玩意，詳細可參考 <a href="http://blog.kkbruce.net/2012/11/zen-coding-extremely-speed-write-your-html5-css3-code.html#.Wb0uksgjGUk" target="_blank" rel="external">ZEN-CODING - 教你極速撰寫HTML5與CSS3程式碼</a>(筆者當年就被這篇文章燒到)。</p>
-                    
-                        <a href="/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
         
         
-        <li class="pagination-next">
-            <a class="btn btn--default btn--small" href="/Blog/page/2/">
-                    <span>下一頁</span>
-                <i class="fa fa-angle-right text-base icon-ml"></i>
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/06/25/Vue套件介紹：axios/" data-tooltip="Vue套件介紹：axios">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
             </a>
         </li>
         
-        <li class="pagination-number">第 1 頁 共 2 頁</li>
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -711,6 +391,110 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/06/25/Vue套件介紹：axios/" data-tooltip="Vue套件介紹：axios">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/">
+                    <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/">
+                    <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/">
+                    <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
             
         </div>
         
@@ -1011,6 +795,25 @@
         <!--SCRIPTS-->
 <script src="/Blog/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
 <!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/';
+                 
+                    this.page.identifier = '2018/08/08/C-使用Nunit建立單元測試/';
+                 
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'EugeneSu';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
