@@ -231,6 +231,51 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/Blog/2018/08/13/C-自定義JsonConverter實作/">
+                            [C#]自定義JsonConverter實作
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2018-08-13T23:47:28+08:00">
+	
+		    8月 13, 2018
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/Blog/categories/C/">C#</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>無論撰寫哪一種語言的應用程式，功能實現上會需要與不同廠商或系統整合經驗介接的經驗，當然其中最重要的是資料交換格式，以前的資料交換格式比較主流是<a href="http://irw.ncut.edu.tw/peterju/xml.html" target="_blank" rel="external">XML 可延伸標示語言</a>，但是與目前主流的<a href="https://www.json.org/" target="_blank" rel="external">Json</a>格式來比較，相對地拘謹與繁瑣，筆者還是比較愛用 json 格式。</p>
+<p>筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者系統為運算及儲存方便，將對應 property 設定為 DateTime 格式，相當然爾，當你寫到<code>Json.Convert</code>時，筆者可以保證系統一定會報錯，我們就來實作自定義的<code>JsonConverter</code>吧</p>
+                    
+                        <a href="/Blog/2018/08/13/C-自定義JsonConverter實作/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/Blog/2018/08/08/C-使用Nunit建立單元測試/">
                             [C#]使用Nunit建立單元測試
                         </a>
@@ -255,8 +300,8 @@
             
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>筆者工作經驗也已快七年，一直都是以C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。</p>
-<p>若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為線上產品，必須寫撰寫單元測試來保護邏輯的正確性。筆者最後選擇Nunit測試框架，接下來就簡單介紹該套件。<br>
+<p>筆者工作經驗也已快七年，一直都是以 C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。</p>
+<p>若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為線上產品，必須寫撰寫單元測試來保護邏輯的正確性。筆者最後選擇 Nunit 測試框架，接下來就簡單介紹該套件。</p>
                     
                         <a href="/Blog/2018/08/08/C-使用Nunit建立單元測試/" class="postShorten-excerpt_link link">
                             繼續閱讀
@@ -577,7 +622,7 @@
                 data-message-zero="沒有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 12 篇文章
+                找到 13 篇文章
             </p>
         </div>
     </div>

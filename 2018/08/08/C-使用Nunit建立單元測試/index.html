@@ -13,21 +13,21 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
-    <meta name="description" content="前提情要 筆者工作經驗也已快七年，一直都是以C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。 若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為">
-<meta name="keywords" content="C# Nunit">
+    <meta name="description" content="前提情要 筆者工作經驗也已快七年，一直都是以 C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。 若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且">
+<meta name="keywords" content="C#,Nunit">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="[C#]使用Nunit建立單元測試">
 <meta property="og:url" content="http://eugenesu0515.github.io/2018/08/08/C-使用Nunit建立單元測試/index.html">
 <meta property="og:site_name" content="Eugene Su">
-<meta property="og:description" content="前提情要 筆者工作經驗也已快七年，一直都是以C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。 若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為">
+<meta property="og:description" content="前提情要 筆者工作經驗也已快七年，一直都是以 C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。 若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/08/08/C-使用Nunit建立單元測試/Nuget_Nunit.jpg">
 <meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/08/08/C-使用Nunit建立單元測試/VS_Extension_Nunit_3_Adapter.jpg">
 <meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/08/08/C-使用Nunit建立單元測試/First_Test_Case.jpg">
-<meta property="og:updated_time" content="2018-08-08T15:31:01.390Z">
+<meta property="og:updated_time" content="2018-08-13T14:04:41.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[C#]使用Nunit建立單元測試">
-<meta name="twitter:description" content="前提情要 筆者工作經驗也已快七年，一直都是以C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。 若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為">
+<meta name="twitter:description" content="前提情要 筆者工作經驗也已快七年，一直都是以 C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。 若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且">
 <meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2018/08/08/C-使用Nunit建立單元測試/Nuget_Nunit.jpg">
 <meta name="twitter:creator" content="@Eugene_Su">
     
@@ -262,31 +262,32 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>筆者工作經驗也已快七年，一直都是以C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。</p>
-<p>若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為線上產品，必須寫撰寫單元測試來保護邏輯的正確性。筆者最後選擇Nunit測試框架，接下來就簡單介紹該套件。<br><a id="more"></a></p>
+<p>筆者工作經驗也已快七年，一直都是以 C#為主要程式語言，換過幾次工作，其中每次換工作時的面試使筆者收穫豐富。筆者幾次面試下來，發現面試官對於四五年以上經驗的工程師面試者，通常都會要求撰寫過單元測試以及瞭解設計模式相關問題。</p>
+<p>若工作經驗中沒有習慣寫單元測試面試下來會吃虧一點，好一點只是無法談到比較滿意的薪水，比較差狀況就是被發好人卡。筆者一直到目前這份工作，因有很多邏輯觸及運算金錢邏輯，且為線上產品，必須寫撰寫單元測試來保護邏輯的正確性。筆者最後選擇 Nunit 測試框架，接下來就簡單介紹該套件。</p>
+<a id="more"></a>
 <h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
-<p>Nunit操作步驟如下：</p>
+<p>Nunit 操作步驟如下：</p>
 <ul>
-<li>我們就建立主控台應用程式當作Nunit測試專案<ul>
+<li>我們就建立主控台應用程式當作 Nunit 測試專案<ul>
 <li>.net framework 4.6.2</li>
 <li>Console Application Template</li>
 </ul>
 </li>
 <li>專案中透過<a href="https://www.nuget.org/" target="_blank" rel="external">nuget</a>安裝<a href="https://nunit.org/" target="_blank" rel="external">Nunit</a><img src="/Blog/2018/08/08/C-使用Nunit建立單元測試/Nuget_Nunit.jpg" alt="[Nuget_Nunit]" title="[Nuget_Nunit]"></li>
-<li>接下來需安裝vs擴充套件<code>NUnit3TestAdapter</code>在專案中跑測試<img src="/Blog/2018/08/08/C-使用Nunit建立單元測試/VS_Extension_Nunit_3_Adapter.jpg" alt="[VS_Extension_Nunit_3_Adapter]" title="[VS_Extension_Nunit_3_Adapter]"></li>
+<li>接下來需安裝 vs 擴充套件<code>NUnit3TestAdapter</code>在專案中跑測試<img src="/Blog/2018/08/08/C-使用Nunit建立單元測試/VS_Extension_Nunit_3_Adapter.jpg" alt="[VS_Extension_Nunit_3_Adapter]" title="[VS_Extension_Nunit_3_Adapter]"></li>
 <li>一開始還不熟悉可以下載<a href="https://github.com/nunit/nunit-csharp-samples" target="_blank" rel="external">C#Samples</a>來看看</li>
-<li>跟著筆者試試看簡單的例子吧，單元測試、TDD這些名詞已經是91哥的代名詞了，我們就來參考他寫的範例，使用Nunit跟著操作一遍吧，參考<a href="https://dotblogs.com.tw/hatelove/2012/11/07/learning-tdd-in-30-days-day3-how-to-write-a-unit-test-code" target="_blank" rel="external">[30天快速上手TDD][Day 3]動手寫 Unit Test</a>。</li>
-<li>我們在專案建立兩個資料夾區分production及test code:<code>source</code>及<code>tests</code></li>
-<li><p>建立<code>Calculator</code>class及撰寫<code>Add</code>function</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Calculator</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Add</span>(<span class="params"><span class="keyword">int</span> firstNumber, <span class="keyword">int</span> secondNumber</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> firstNumber + secondNumber;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>建立<code>CalculatorTest</code>檔案並撰寫我們的第一個單元測試</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[<span class="meta">TestFixture</span>]</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CalculatorTest</span></div><div class="line">&#123;</div><div class="line">    [<span class="meta">Test</span>]</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Add_Input_First_1_Second_2_Return_3</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="comment">//arrange</span></div><div class="line">        <span class="keyword">var</span> target =  <span class="keyword">new</span> Calculator();</div><div class="line">        <span class="keyword">var</span> firstNumber = <span class="number">1</span>;</div><div class="line">        <span class="keyword">var</span> secondNumber = <span class="number">2</span>;</div><div class="line">        <span class="keyword">var</span> expected = <span class="number">3</span>;</div><div class="line">        <span class="comment">//act</span></div><div class="line">        <span class="keyword">var</span> actual = target.Add(firstNumber, secondNumber);</div><div class="line">        <span class="comment">//assert</span></div><div class="line">        Assert.AreEqual(expected, actual);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
+<li>跟著筆者試試看簡單的例子吧，單元測試、TDD 這些名詞已經是 91 哥的代名詞了，我們就來參考他寫的範例，使用 Nunit 跟著操作一遍吧，參考<a href="https://dotblogs.com.tw/hatelove/2012/11/07/learning-tdd-in-30-days-day3-how-to-write-a-unit-test-code" target="_blank" rel="external">[30 天快速上手 TDD][Day 3]動手寫 Unit Test</a>。</li>
+<li>我們在專案建立兩個資料夾區分 production 及 test code:<code>source</code>及<code>tests</code></li>
+<li>建立<code>Calculator</code>class 及撰寫<code>Add</code>function</li>
 </ul>
-<p>以上主要要解釋的是在Test Class中必須套上<code>TextFixture</code>讓Nunit識別為測試類別，測試方法則需套上<code>Test</code>Attribute，寫法與MSTest相似。<br><img src="/Blog/2018/08/08/C-使用Nunit建立單元測試/First_Test_Case.jpg" alt="[First_Test_Case]" title="[First_Test_Case]"></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Calculator</span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Add</span>(<span class="params"><span class="keyword">int</span> firstNumber, <span class="keyword">int</span> secondNumber</span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="keyword">return</span> firstNumber + secondNumber;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>建立<code>CalculatorTest</code>檔案並撰寫我們的第一個單元測試</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[<span class="meta">TestFixture</span>]</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">CalculatorTest</span></div><div class="line">&#123;</div><div class="line">    [<span class="meta">Test</span>]</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Add_Input_First_1_Second_2_Return_3</span>(<span class="params"></span>)</span></div><div class="line"><span class="function">    </span>&#123;</div><div class="line">        <span class="comment">//arrange</span></div><div class="line">        <span class="keyword">var</span> target =  <span class="keyword">new</span> Calculator();</div><div class="line">        <span class="keyword">var</span> firstNumber = <span class="number">1</span>;</div><div class="line">        <span class="keyword">var</span> secondNumber = <span class="number">2</span>;</div><div class="line">        <span class="keyword">var</span> expected = <span class="number">3</span>;</div><div class="line">        <span class="comment">//act</span></div><div class="line">        <span class="keyword">var</span> actual = target.Add(firstNumber, secondNumber);</div><div class="line">        <span class="comment">//assert</span></div><div class="line">        Assert.AreEqual(expected, actual);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上主要要解釋的是在 Test Class 中必須套上<code>TextFixture</code>讓 Nunit 識別為測試類別，測試方法則需套上<code>Test</code>Attribute，寫法與 MSTest 相似。<br><img src="/Blog/2018/08/08/C-使用Nunit建立單元測試/First_Test_Case.jpg" alt="[First_Test_Case]" title="[First_Test_Case]"></p>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
-<p>以上，筆者建立了很簡易的Nunit測試專案並完成第一個測試案例，筆者預計再寫幾篇介紹Nunit其他的屬性及設定，此篇的範例檔案在此<a href="https://github.com/EugeneSu0515/NunitDemo" target="_blank" rel="external">NunitDemo</a>，筆者會繼續使用該專案擴充其他範例，下篇再見了。</p>
+<p>以上，筆者建立了很簡易的 Nunit 測試專案並完成第一個測試案例，筆者預計再寫幾篇介紹 Nunit 其他的屬性及設定，此篇的範例檔案在此<a href="https://github.com/EugeneSu0515/NunitDemo" target="_blank" rel="external">NunitDemo</a>，筆者會繼續使用該專案擴充其他範例，下篇再見了。</p>
 
             
         </div>
@@ -296,7 +297,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/C-Nunit/">C# Nunit</a>
+    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/C/">C#</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/Nunit/">Nunit</a>
 
             </div>
         
@@ -306,7 +307,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/08/13/C-自定義JsonConverter實作/"  data-tooltip="[C#]自定義JsonConverter實作">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -398,7 +399,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/08/13/C-自定義JsonConverter實作/"  data-tooltip="[C#]自定義JsonConverter實作">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -784,7 +785,7 @@
                 data-message-zero="沒有找到文章"
                 data-message-one="找到 1 篇文章"
                 data-message-other="找到 {n} 篇文章">
-                找到 12 篇文章
+                找到 13 篇文章
             </p>
         </div>
     </div>
