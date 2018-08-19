@@ -13,21 +13,21 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
-    <meta name="description" content="前提情要 無論撰寫哪一種語言的應用程式，功能實現上會需要與不同廠商或系統整合經驗介接的經驗，當然其中最重要的是資料交換格式，以前的資料交換格式比較主流是XML 可延伸標示語言，但是與目前主流的Json格式來比較，相對地拘謹與繁瑣，筆者還是比較愛用 json 格式。 筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者系統為運算及儲存方便，將對應 propert">
+    <meta name="description" content="前提情要 無論撰寫哪一種語言的應用程式，功能實現上會需要與不同廠商或系統整合經驗介接的經驗，當然其中最重要的是資料交換格式，以前的資料交換格式比較主流是XML 可延伸標示語言，但是與目前主流的Json格式來比較，相對地拘謹與繁瑣，筆者還是比較愛用 json 格式。 筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者的程式為運算及儲存方便，將對應 proper">
 <meta name="keywords" content="C#,JsonConverter">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="[C#]自定義JsonConverter實作">
 <meta property="og:url" content="http://eugenesu0515.github.io/2018/08/13/C-自定義JsonConverter實作/index.html">
 <meta property="og:site_name" content="Eugene Su">
-<meta property="og:description" content="前提情要 無論撰寫哪一種語言的應用程式，功能實現上會需要與不同廠商或系統整合經驗介接的經驗，當然其中最重要的是資料交換格式，以前的資料交換格式比較主流是XML 可延伸標示語言，但是與目前主流的Json格式來比較，相對地拘謹與繁瑣，筆者還是比較愛用 json 格式。 筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者系統為運算及儲存方便，將對應 propert">
+<meta property="og:description" content="前提情要 無論撰寫哪一種語言的應用程式，功能實現上會需要與不同廠商或系統整合經驗介接的經驗，當然其中最重要的是資料交換格式，以前的資料交換格式比較主流是XML 可延伸標示語言，但是與目前主流的Json格式來比較，相對地拘謹與繁瑣，筆者還是比較愛用 json 格式。 筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者的程式為運算及儲存方便，將對應 proper">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/08/13/C-自定義JsonConverter實作/JsonConvert_Error.jpg">
 <meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/08/13/C-自定義JsonConverter實作/UtcTimeToDateTimeConverter_Alert.png">
 <meta property="og:image" content="http://eugenesu0515.github.io/Blog/2018/08/13/C-自定義JsonConverter實作/JsonConverter.jpg">
-<meta property="og:updated_time" content="2018-08-13T15:47:57.576Z">
+<meta property="og:updated_time" content="2018-08-19T08:48:09.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[C#]自定義JsonConverter實作">
-<meta name="twitter:description" content="前提情要 無論撰寫哪一種語言的應用程式，功能實現上會需要與不同廠商或系統整合經驗介接的經驗，當然其中最重要的是資料交換格式，以前的資料交換格式比較主流是XML 可延伸標示語言，但是與目前主流的Json格式來比較，相對地拘謹與繁瑣，筆者還是比較愛用 json 格式。 筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者系統為運算及儲存方便，將對應 propert">
+<meta name="twitter:description" content="前提情要 無論撰寫哪一種語言的應用程式，功能實現上會需要與不同廠商或系統整合經驗介接的經驗，當然其中最重要的是資料交換格式，以前的資料交換格式比較主流是XML 可延伸標示語言，但是與目前主流的Json格式來比較，相對地拘謹與繁瑣，筆者還是比較愛用 json 格式。 筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者的程式為運算及儲存方便，將對應 proper">
 <meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2018/08/13/C-自定義JsonConverter實作/JsonConvert_Error.jpg">
 <meta name="twitter:creator" content="@Eugene_Su">
     
@@ -263,7 +263,7 @@
         <div class="main-content-wrap">
             <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
 <p>無論撰寫哪一種語言的應用程式，功能實現上會需要與不同廠商或系統整合經驗介接的經驗，當然其中最重要的是資料交換格式，以前的資料交換格式比較主流是<a href="http://irw.ncut.edu.tw/peterju/xml.html" target="_blank" rel="external">XML 可延伸標示語言</a>，但是與目前主流的<a href="https://www.json.org/" target="_blank" rel="external">Json</a>格式來比較，相對地拘謹與繁瑣，筆者還是比較愛用 json 格式。</p>
-<p>筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者系統為運算及儲存方便，將對應 property 設定為 DateTime 格式，相當然爾，當你寫到<code>Json.Convert</code>時，筆者可以保證系統一定會報錯，我們就來實作自定義的<code>JsonConverter</code>吧</p>
+<p>筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者的程式為運算及儲存方便，將對應 property 設定為 <code>DateTime</code> 格式，相當然爾，當寫到<code>Json.Convert</code>時，一定會報錯，此篇目的就是來示範解決這個錯誤，範例將使用<a href="https://www.linqpad.net/" target="_blank" rel="external">linqpad</a>示範。</p>
 <a id="more"></a>
 <h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
 <p>筆者要來重現一下問題，我們就宣告一個具有<code>DateTime</code>Property，我們寫一個相對應名稱的 Json string，並且將值指定為<code>Unix timestamp</code></p>
@@ -286,7 +286,7 @@
 <p>完整程式碼，參考<a href="https://gist.github.com/EugeneSu0515/14b84aba6da4a1c2b9d8dea7f54d55d5" target="_blank" rel="external">JsonConverterDemo.linq</a></p>
 <script src="//gist.github.com/14b84aba6da4a1c2b9d8dea7f54d55d5.js?file=JsonConverterDemo.linq"></script>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
-<p>總的來說，我們若遇到資料交換格式中轉換的問題，可以使用<code>JsonConverter</code>實作的方式解決，當然奇形怪狀的格式都任意轉為自己比較好操作的格式。後端撰寫免不了 json 資料操作，好好研究一下<code>Newtonsoft.Json</code>有哪些可擴充的點，可讓你省下不少時間。</p>
+<p>總的來說，我們若遇到資料交換格式中轉換的問題，可以使用<code>JsonConverter</code>實作的方式解決，任何奇形怪狀的格式皆可轉為任意且自己比較好操作的格式。後端程式撰寫免不了 <code>json</code>格式 資料操作，好好研究一下<code>Newtonsoft.Json</code>有哪些可擴充的點，可讓自己省下不少時間。</p>
 
             
         </div>

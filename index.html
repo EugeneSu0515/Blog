@@ -255,7 +255,7 @@
                 <div class="postShorten-excerpt" itemprop="articleBody">
                     <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
 <p>無論撰寫哪一種語言的應用程式，功能實現上會需要與不同廠商或系統整合經驗介接的經驗，當然其中最重要的是資料交換格式，以前的資料交換格式比較主流是<a href="http://irw.ncut.edu.tw/peterju/xml.html" target="_blank" rel="external">XML 可延伸標示語言</a>，但是與目前主流的<a href="https://www.json.org/" target="_blank" rel="external">Json</a>格式來比較，相對地拘謹與繁瑣，筆者還是比較愛用 json 格式。</p>
-<p>筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者系統為運算及儲存方便，將對應 property 設定為 DateTime 格式，相當然爾，當你寫到<code>Json.Convert</code>時，筆者可以保證系統一定會報錯，我們就來實作自定義的<code>JsonConverter</code>吧</p>
+<p>筆者目前碰到一種狀況是，對方系統所送出的資料格式為 utc timestamp 格式，筆者的程式為運算及儲存方便，將對應 property 設定為 <code>DateTime</code> 格式，相當然爾，當寫到<code>Json.Convert</code>時，一定會報錯，此篇目的就是來示範解決這個錯誤，範例將使用<a href="https://www.linqpad.net/" target="_blank" rel="external">linqpad</a>示範。</p>
                     
                         <a href="/Blog/2018/08/13/C-自定義JsonConverter實作/" class="postShorten-excerpt_link link">
                             繼續閱讀
