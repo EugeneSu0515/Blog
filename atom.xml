@@ -6,7 +6,7 @@
   <link href="/Blog/atom.xml" rel="self"/>
   
   <link href="http://eugenesu0515.github.io/"/>
-  <updated>2018-08-19T08:48:09.091Z</updated>
+  <updated>2018-09-03T15:06:27.904Z</updated>
   <id>http://eugenesu0515.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Flutter]初遇Flutter</title>
+    <link href="http://eugenesu0515.github.io/2018/09/03/Flutter-%E5%88%9D%E9%81%87Flutter/"/>
+    <id>http://eugenesu0515.github.io/2018/09/03/Flutter-初遇Flutter/</id>
+    <published>2018-09-03T15:06:09.000Z</published>
+    <updated>2018-09-03T15:06:27.904Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr><p>筆者在前幾天，被同事問到是否知道<code>Flutter</code>這個技術，當時毫無頭緒。查了一下網路才知道，是由<code>Google</code>發出，使用<a href="https://www.dartlang.org/" target="_blank" rel="external">Dart語言</a>撰寫，經由<code>Flutter</code>編譯後可以生成原生<code>Android</code>及<code>IOS</code>程式，因筆者之前有經驗撰寫<a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/" target="_blank" rel="external">Xamarin.Forms</a>，很好奇這種寫一套即可產生App兩大生態系統的原生程式，跟著筆者一探究竟吧。<br><a id="more"></a></p><h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr><!-- toc --><h3 id="安裝Flutter環境"><a href="#安裝Flutter環境" class="headerlink" title="安裝Flutter環境"></a>安裝<code>Flutter</code>環境</h3><ul><li><p>下載<a href="https://flutter.io/get-started/install/" target="_blank" rel="external">Flutter安裝包</a>，筆者這邊以<code>Windows 10</code>系統做示範，進到相對應系統頁面後，找到<a href="https://storage.googleapis.com/flutter_infra/releases/beta/windows/flutter_windows_v0.6.0-beta.zip" target="_blank" rel="external">flutter_windows_v0.6.0-beta.zip</a>點擊位置，將壓縮檔案下載下來。</p></li><li><p>將下載下來的壓縮檔案解壓縮至C槽特定位置，筆者這邊以官網建議之<code>C:\src\flutter</code></p><blockquote><p>此位置到時需設置為使用者環境變數</p></blockquote></li><li><p>第二步驟解壓縮檔案中找到<code>bin\flutter.bat</code>並點擊執行</p></li><li><p>接下來設定使用者環境變數後就完成了</p><ul><li>筆者這邊使用<a href="https://chocolatey.org/packages/RapidEE" target="_blank" rel="external">Rapid Environment Editor</a>，記得使用<code>系統管理者</code>身份開啟該軟體，在<code>User Variables</code>的<code>Path</code>中新增解壓縮的位置，以筆者環境為例則設定<code>C:\src\flutter\bin</code></li><li>或者使用Windows 10內建之<code>系統&gt;系統內容&gt;環境變數&gt;使用者變數&gt;Path</code></li></ul></li><li><p>於<code>cmd</code>中執行看看<code>flutter</code>相關指令</p></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flutter --version</div></pre></td></tr></table></figure><img src="/Blog/2018/09/03/Flutter-初遇Flutter/flutter_command_line.png" alt="[flutter_command_line]" title="[flutter_command_line]"><p>如果出現以上畫面，恭喜你已成功設定<code>Flutter環境</code>。</p><h3 id="安裝Android-Emulator"><a href="#安裝Android-Emulator" class="headerlink" title="安裝Android Emulator"></a>安裝Android Emulator</h3><p>可以參考<a href="https://www.androidauthority.com/best-android-emulators-for-pc-655308/" target="_blank" rel="external">13 best android emulators of 2018</a>，筆者直接以<code>Android Studio</code>做示範。</p><ul><li>下載<code>Android Studio</code><ul><li>Android Studio下載連結 <a href="https://developer.android.com/studio/install" target="_blank" rel="external">https://developer.android.com/studio/install</a></li><li>或者<code>choco install androidstudio -y</code></li></ul></li><li><p>安裝完成後設定Android Emulator</p><img src="/Blog/2018/09/03/Flutter-初遇Flutter/android_studio_start.png" alt="[android_studio_start]" title="[android_studio_start]"><p>安裝<code>Android Studio</code>目的不為別的，只為了<code>Android Virtual Device Manager</code>，但筆者始終在以上頁面找不到開啟<code>Android Virtual Device Manager</code>地方，筆者使用最後一個選項Import an Android code sample，隨意選擇一個範例專案並開啟，開啟範例專案後設定<code>Virtual Device</code></p><img src="/Blog/2018/09/03/Flutter-初遇Flutter/create_virtual_device.png" alt="[create_virtual_device]" title="[create_virtual_device]"><p>由以上畫面可以看到，筆者已經設置一台<code>Nexus 6 API 28</code>的裝置，做到這邊已經完成設定Android Emulator的步驟了。</p><blockquote><p>筆者還是強烈建議透過安裝<code>Android Studio</code>設定<code>Android Emulator</code>，以避免不必要的Android其他環境問題，例：Android SDK</p></blockquote></li></ul><h3 id="撰寫Flutter程式"><a href="#撰寫Flutter程式" class="headerlink" title="撰寫Flutter程式"></a>撰寫Flutter程式</h3><p>官網建議編輯器有兩個，<code>Android Studio</code> 以及 <code>Visual Studio Code</code>，筆者因撰寫過Vuejs程式，兩者比較之下對於VSCode更為熟悉一點，選擇VSCode作為主要開發工具。</p><ul><li>安裝VSCode<ul><li><a href="https://code.visualstudio.com/download" target="_blank" rel="external">https://code.visualstudio.com/download</a></li><li><code>choco install vscode -y</code></li></ul></li><li>開啟VSCode並安裝外掛套件<ul><li><a href="https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code" target="_blank" rel="external">Dart</a></li><li><a href="https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter" target="_blank" rel="external">Flutter</a></li></ul></li><li>新增一個<code>hello_world</code>專案<ul><li><code>Ctrl+Shift+P</code>開啟VSCode Command小視窗</li><li>鍵入<code>flutter</code>會有以下三個選擇<ul><li>Flutter: New Project</li><li>Flutter: Run Flutter Upgrade</li><li>Flutter: Run Flutter Doctor</li></ul></li><li>選擇<code>Flutter: New Project</code>，鍵入專案名稱：<code>hello_world</code>，最後選擇專案存放位置</li></ul></li><li>專案目錄結構<img src="/Blog/2018/09/03/Flutter-初遇Flutter/hello_world_proj.png" alt="[hello_world_proj]" title="[hello_world_proj]">程式主要撰寫於<code>lib&gt;main.dart</code>中</li><li>執行專案前需先啟動<code>Android Emulator</code>，<ul><li><code>Ctrl+Shift+P</code>開啟VSCode Command小視窗</li><li>鍵入<code>flutter</code>會出現更多選項，選擇<code>Flutter: Launch Emulator</code>，會跳出本機已設定之Virtual Device List，以筆者環境來說是<code>Nexus 6 API 28</code></li></ul></li><li><p>鍵入<code>Ctrl+Shift+D</code>切換至Debug頁籤，新增Debug Configuration</p><img src="/Blog/2018/09/03/Flutter-初遇Flutter/flutter_launch_config.png" alt="[flutter_launch_config]" title="[flutter_launch_config]"><blockquote><p>使用<code>Add Configuration</code>方式VSCode會自動新增launch.json檔案</p></blockquote></li><li><p>最後按下<code>F5</code>偵錯並執行程式，可以看到程式執行於Android Emulator中</p><img src="/Blog/2018/09/03/Flutter-初遇Flutter/flutter_execute.png" alt="[flutter_execute]" title="[flutter_execute]"></li></ul><h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr><p>這一篇就先以設定環境，執行第一支<code>hello_world</code>專案程式，下一篇開始慢慢講述專案結構、dart語言以及flutter提供的Widgets，下篇見。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前提情要&quot;&gt;&lt;a href=&quot;#前提情要&quot; class=&quot;headerlink&quot; title=&quot;前提情要&quot;&gt;&lt;/a&gt;前提情要&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;筆者在前幾天，被同事問到是否知道&lt;code&gt;Flutter&lt;/code&gt;這個技術，當時毫無頭緒。查了一下網路才知道，是由&lt;code&gt;Google&lt;/code&gt;發出，使用&lt;a href=&quot;https://www.dartlang.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dart語言&lt;/a&gt;撰寫，經由&lt;code&gt;Flutter&lt;/code&gt;編譯後可以生成原生&lt;code&gt;Android&lt;/code&gt;及&lt;code&gt;IOS&lt;/code&gt;程式，因筆者之前有經驗撰寫&lt;a href=&quot;https://docs.microsoft.com/en-us/xamarin/xamarin-forms/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Xamarin.Forms&lt;/a&gt;，很好奇這種寫一套即可產生App兩大生態系統的原生程式，跟著筆者一探究竟吧。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Flutter" scheme="http://eugenesu0515.github.io/categories/Flutter/"/>
+    
+    
+      <category term="Flutter" scheme="http://eugenesu0515.github.io/tags/Flutter/"/>
+    
+      <category term="Dart" scheme="http://eugenesu0515.github.io/tags/Dart/"/>
+    
+  </entry>
   
   <entry>
     <title>[C#]自定義JsonConverter實作</title>
