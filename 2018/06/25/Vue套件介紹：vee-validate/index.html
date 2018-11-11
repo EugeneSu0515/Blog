@@ -6,31 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Eugene Su">
-    <title>dotnet-core系列文章二：VSCode教學 - Eugene Su</title>
+    <title>Vue套件介紹：vee-validate - Eugene Su</title>
     <meta name="author" content="Eugene Su">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
     
-    <meta name="description" content="前提情要 上一篇講到開發dotnet core相關程式，論語說「工欲善其事，必先利其器」，相當然爾，熟悉開發工具這件事情直接影響你的開發產能。因筆者現況，公司配的桌機跟自己的筆電配備上有落差，以不耗系統資源的考量下，下定決心將「Visual Studio Code」作為首選開發工具。">
-<meta name="keywords" content="dotnet core,vscode">
+    <meta name="description" content="前提情要 Vue.js專案開發，一般應用程式都會遇到表單送出功能，然而前後端分離架構下，前後端必須採用不同階段的驗證，筆者認為基本的資料驗證必須得在前端完成，後端API接收到的資料，應該只剩資料重複性檢查等複雜驗證，這才是筆者認為的健康的資料流。Vue.js驗證相關套件中，筆者選擇vee-validate，此篇就以該套件說明使用方式。">
+<meta name="keywords" content="vue,vee-validate">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="dotnet-core系列文章二：VSCode教學">
-<meta property="og:url" content="http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/index.html">
+<meta property="og:title" content="Vue套件介紹：vee-validate">
+<meta property="og:url" content="http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/index.html">
 <meta property="og:site_name" content="Eugene Su">
-<meta property="og:description" content="前提情要 上一篇講到開發dotnet core相關程式，論語說「工欲善其事，必先利其器」，相當然爾，熟悉開發工具這件事情直接影響你的開發產能。因筆者現況，公司配的桌機跟自己的筆電配備上有落差，以不耗系統資源的考量下，下定決心將「Visual Studio Code」作為首選開發工具。">
+<meta property="og:description" content="前提情要 Vue.js專案開發，一般應用程式都會遇到表單送出功能，然而前後端分離架構下，前後端必須採用不同階段的驗證，筆者認為基本的資料驗證必須得在前端完成，後端API接收到的資料，應該只剩資料重複性檢查等複雜驗證，這才是筆者認為的健康的資料流。Vue.js驗證相關套件中，筆者選擇vee-validate，此篇就以該套件說明使用方式。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/CtrlTab_CtrlPgUp_CtrlPgDown.gif">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/CtrlP.gif">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/AltUpDown.gif">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/CtrlUp_CtrlDown.gif">
-<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/CtrlShiftP.gif">
-<meta property="og:updated_time" content="2017-09-18T07:33:11.633Z">
+<meta property="og:image" content="http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/ValidationDemo.gif">
+<meta property="og:updated_time" content="2018-11-11T04:46:16.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dotnet-core系列文章二：VSCode教學">
-<meta name="twitter:description" content="前提情要 上一篇講到開發dotnet core相關程式，論語說「工欲善其事，必先利其器」，相當然爾，熟悉開發工具這件事情直接影響你的開發產能。因筆者現況，公司配的桌機跟自己的筆電配備上有落差，以不耗系統資源的考量下，下定決心將「Visual Studio Code」作為首選開發工具。">
-<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/CtrlTab_CtrlPgUp_CtrlPgDown.gif">
+<meta name="twitter:title" content="Vue套件介紹：vee-validate">
+<meta name="twitter:description" content="前提情要 Vue.js專案開發，一般應用程式都會遇到表單送出功能，然而前後端分離架構下，前後端必須採用不同階段的驗證，筆者認為基本的資料驗證必須得在前端完成，後端API接收到的資料，應該只剩資料重複性檢查等複雜驗證，這才是筆者認為的健康的資料流。Vue.js驗證相關套件中，筆者選擇vee-validate，此篇就以該套件說明使用方式。">
+<meta name="twitter:image" content="http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/ValidationDemo.gif">
 <meta name="twitter:creator" content="@Eugene_Su">
     
         <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
@@ -239,20 +235,20 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            dotnet-core系列文章二：VSCode教學
+            Vue套件介紹：vee-validate
         </h1>
     
     
         <div class="post-meta">
-    <time itemprop="datePublished" datetime="2017-09-12T08:11:27+08:00">
+    <time itemprop="datePublished" datetime="2018-06-25T17:58:17+08:00">
 	
-		    9月 12, 2017
+		    6月 25, 2018
     	
     </time>
     
         <span>分類 </span>
         
-    <a class="category-link" href="/Blog/categories/dotnet-core/">dotnet core</a>
+    <a class="category-link" href="/Blog/categories/vue/">vue</a>
 
 
     
@@ -264,106 +260,50 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
-<p>上一篇講到開發dotnet core相關程式，論語說「工欲善其事，必先利其器」，相當然爾，熟悉開發工具這件事情直接影響你的開發產能。因筆者現況，公司配的桌機跟自己的筆電配備上有落差，以不耗系統資源的考量下，下定決心將「Visual Studio Code」作為首選開發工具。</p>
-<a id="more"></a>
-<p>簡單敘述一下筆者這邊的環境</p>
-<ul>
-<li>VsCode：使用最新版本1.16.0</li>
-<li>作業系統：Windows 10</li>
-</ul>
-<blockquote>
-<p>以下示範內容皆為Windows環境下的快捷鍵及設定</p>
-</blockquote>
+<p><code>Vue.js</code>專案開發，一般應用程式都會遇到表單送出功能，然而前後端分離架構下，前後端必須採用不同階段的驗證，筆者認為基本的資料驗證必須得在前端完成，後端API接收到的資料，應該只剩資料重複性檢查等複雜驗證，這才是筆者認為的健康的資料流。<code>Vue.js</code>驗證相關套件中，筆者選擇<a href="https://baianat.github.io/vee-validate/" target="_blank" rel="external">vee-validate</a>，此篇就以該套件說明使用方式。<br><a id="more"></a></p>
 <h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
-<p>Visual Studio Code是<a href="https://electron.atom.io/" target="_blank" rel="external">Electron</a>建置而成，它基本上核心就是chrome v8引擎，可以想像成是在使用瀏覽器，接著筆者會以不同功能取向為分類準則，分門別類介紹目前使用上必須記得快捷鍵及小技巧。</p>
-<h4 id="Tab操作"><a href="#Tab操作" class="headerlink" title="Tab操作"></a>Tab操作</h4><p>Tab操作與Chrome很像，基本Tab操作快捷鍵如</p>
 <ul>
-<li><code>Ctrl+Tab</code>:切換到最後編輯視窗，按住不動會跳出目前開啟中的檔案清單，可使用上、下鍵選擇欲切換的視窗</li>
-<li><code>Ctrl+PgUp</code>:切換到下一個編輯視窗</li>
-<li><code>Ctrl+PgDn</code>:切換到上一個編輯視窗</li>
-<li><code>Ctrl+W</code>:關閉目前視窗</li>
-</ul>
-<img src="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/CtrlTab_CtrlPgUp_CtrlPgDown.gif" alt="[ctrl_tab]" title="[ctrl_tab]">
-<p>不同的是無法使用<code>Ctrl+數字鍵</code>切換相對應數字的Tab，因VSCode有多個編輯區塊瀏覽相關用途；另Chrome上新增頁籤時使用<code>Ctrl+T</code>，對於VSCode來說是新增一個檔案，因此需習慣<code>Ctrl+N</code>熱鍵。</p>
-<h4 id="左側欄"><a href="#左側欄" class="headerlink" title="左側欄"></a>左側欄</h4><p>左側欄由五個不同功能視窗組成，快捷鍵及對應視窗分別為</p>
+<li><p>安裝</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install vee-validate --save</div><div class="line">yarn add vee-validate</div></pre></td></tr></table></figure>
+</li>
+<li><p>載入使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//接定義於main.js中</span></div><div class="line"><span class="comment">//載入</span></div><div class="line"><span class="keyword">import</span> VeeValidate <span class="keyword">from</span> <span class="string">'vee-validate'</span>;</div><div class="line"><span class="comment">//使用</span></div><div class="line">Vue.use(VeeValidate);</div></pre></td></tr></table></figure>
+</li>
+<li><p>基本用法</p>
 <ul>
-<li><code>Ctrl+Shift+E</code>檔案總管</li>
-<li><code>Ctrl+Shift+F</code>搜尋</li>
-<li><code>Ctrl+Shift+G</code>git</li>
-<li><code>Ctrl+Shift+D</code>Debug</li>
-<li><code>Ctrl+Shift+X</code>擴充套件</li>
+<li><p>在表單中的input設定驗證屬性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- name屬性一定要設定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-validate</span>=<span class="string">"'required'"</span> <span class="attr">name</span>=<span class="string">"myinput"</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 顯示錯誤訊息-與name屬性設定名稱需一致 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; errors.first('myinput') &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>表單送出事件中驗證</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// submit method做驗證</span></div><div class="line">submitProcess: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.$validator.validateAll().then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">if</span> (result) &#123;</div><div class="line">            <span class="comment">//驗證成功區塊-可以實作呼叫API</span></div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//驗證失敗顯示資訊</span></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>這邊提供一個記憶的小技巧，以上共通點是都是有<code>Ctrl+Shift</code>，字母按鍵配合功能所屬英文單字記就會好記很多，例:<strong>E:Explorer</strong>，詳細參考</p>
-<ul>
-<li><strong>E</strong>:Explorer</li>
-<li><strong>F</strong>:Find</li>
-<li><strong>G</strong>:Git</li>
-<li><strong>D</strong>:Debug</li>
-<li><strong>X</strong>:Extension(這個稍微要變化一下，因為已經使用掉E)</li>
+</li>
 </ul>
-<p>最後要提到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Ctrl+B</div></pre></td></tr></table></figure></p>
-<p>可以縮合、展開左側欄，會停駐於最後打開的視窗(視窗種類參考上述)，筆者在寫code時會常使用該快捷鍵，專心寫code時會關閉左側欄<code>Ctrl+B</code>，依照需求會直接按下<code>Ctrl+Shift+E/F/...</code>。</p>
-<h4 id="Editor編輯區塊"><a href="#Editor編輯區塊" class="headerlink" title="Editor編輯區塊"></a>Editor編輯區塊</h4><p>一定要背的快捷鍵是<code>Ctrl+P</code>，可快速搜尋目前開啟中專案裡的檔案，參考</p>
-<img src="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/CtrlP.gif" alt="[Ctrl_P]" title="[Ctrl_P]">
-<p>接下來，筆者會把快捷鍵標示出來，配合看gif動態圖檔，就會明白其用途</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//上/下搬動選取程式碼區塊</div><div class="line">Alt+Up(Down)</div></pre></td></tr></table></figure>
-<img src="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/AltUpDown.gif" alt="[Alt_Up_Down]" title="[Alt_Up_Down]">
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//編輯器視窗捲軸上/下移動</div><div class="line">Ctrl+Up(Down)</div></pre></td></tr></table></figure>
-<img src="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/CtrlUp_CtrlDown.gif" alt="[Ctrl_Up_Down]" title="[Ctrl_Up_Down]">
-<h4 id="通用功能"><a href="#通用功能" class="headerlink" title="通用功能"></a>通用功能</h4><p>最重要的功能，沒有之一，主角是<code>Ctrl+Shift+P</code>，執行指令，可以打一些關鍵字搜尋出相對應的功能，筆者最常用的是</p>
-<table>
-<thead>
-<tr>
-<th>關鍵字</th>
-<th>指令全名</th>
-<th>功用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Keyboard</td>
-<td>Open Keyboard ShortCuts</td>
-<td>打開鍵盤快捷鍵設定視窗</td>
-</tr>
-<tr>
-<td>Theme</td>
-<td>Color Theme</td>
-<td>跳出設定Theme視窗</td>
-</tr>
-<tr>
-<td>Language</td>
-<td>Change Language Mode</td>
-<td>變更目前開啟中的編輯視窗所屬程式語言</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>列出的Command清單中可發現右邊區塊會顯示該Command相對應的快捷鍵</p>
-</blockquote>
-<p>以此類推，這個快捷鍵時常會用到，安裝的外掛，常常也會伴隨著已設定好的Command可以方便使用，就以<strong>Markdown</strong>相關外掛來說，例：<a href="https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts" target="_blank" rel="external">Markdown Shortcuts</a>，安裝完成後，按下<code>Ctrl+Shift+P</code>，打下關鍵字<strong>Markdown</strong>，就會有一些已設定好的功能方便使用。</p>
-<img src="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/CtrlShiftP.gif" alt="[Execute_Command]" title="[Execute_Command]">
-<h4 id="下方區塊"><a href="#下方區塊" class="headerlink" title="下方區塊"></a>下方區塊</h4><p>錯誤提示訊息視窗<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Ctrl+Shift+M</div></pre></td></tr></table></figure></p>
-<p>執行結果顯示訊息視窗<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Ctrl+Shift+U</div></pre></td></tr></table></figure></p>
-<p>Debug結果顯示訊息視窗<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Ctrl+Shift+Y</div></pre></td></tr></table></figure></p>
-<p>Terminal視窗<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//原生</div><div class="line">Ctrl+`</div><div class="line">//筆者設定</div><div class="line">Ctrl+Shift+/</div></pre></td></tr></table></figure></p>
-<p>這個下方區塊的各個視窗，快捷鍵就沒相關的記憶點，多按幾次就會記下來了，通常比較常用的是<code>Ctrl+</code> `。因為筆者發現，若外面有開啟Terminal視窗，按下該快捷鍵Focus於外面的Termial視窗，滿困擾筆者的，因此筆者有特地調整該快捷鍵，調整步驟如下：</p>
-<ul>
-<li>按下<code>Ctrl+Shift+P</code></li>
-<li>搜尋<strong>Keyboard</strong></li>
-<li>選擇<strong>Open Keyboard ShortCuts</strong></li>
-<li>在搜尋方塊中搜尋<strong>ToggleIntegratedTerminal</strong></li>
-<li>點擊最左側的一枝筆圖示</li>
-<li>按下你想要設定的快捷鍵後按下<code>Enter</code></li>
-</ul>
-<blockquote>
-<p>這邊要提點一下，可以先反查自己欲設定的快捷鍵是否已經有設定過(配合<strong>When</strong>的使用情境)，最好是不要設定重複快捷鍵。</p>
-</blockquote>
-<p>對於最常用到的<strong>Terminal</strong>視窗部份，筆者要再補充一些需注意使用情境。筆者在寫code時，焦點會在Editor編輯視窗，這時想切換至Terminal視窗下指令時，很自然地按下<code>Ctrl+Shift+/</code>。若<strong>Terminal</strong>視窗是開啟狀態下，效果會是關閉Terminal視窗，沒有達到直接可以打指令的狀況。</p>
-<p>想要解決這個情況，必須去<strong>Keyboard ShortCuts</strong>設定中，針對<strong>FocusTerminal</strong>去設定想要的快捷鍵，筆者目前使用<code>Shift+Alt+/</code>，以下提供筆者的使用情境配置習慣。</p>
-<div class="alert info"><p>只要想使用指令列服務，請按下<strong>FocusTeminal</strong>設定快捷鍵，想要將Terminal視窗關閉，則按下<strong>ToggleIntegratedTerminal</strong>設定快捷鍵</p>
-</div>
+<p>以上基本用法的實際應用，跟著筆者做一個登入頁面感受一下吧。筆者會持續更新之前使用的VueDemo專案，連結於此<br><a href="https://github.com/EugeneSu0515/VueDemoApp.git" target="_blank" rel="external">https://github.com/EugeneSu0515/VueDemoApp.git</a></p>
+<p>安裝步驟就省略掉了，參考上方安裝方法，接下來實作其他步驟：</p>
+<ol>
+<li><p>加一個Validation Component，template區塊中宣告</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 有兩個欄位-帳號及密碼，並且驗證為必填，放一個登入按鈕</span></div><div class="line"><span class="comment">，並且執行「submitProcess」method --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"userId"</span>&gt;</span>UserId<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></div><div class="line"><span class="tag">                <span class="attr">class</span>=<span class="string">"form-control"</span></span></div><div class="line"><span class="tag">                <span class="attr">id</span>=<span class="string">"userId"</span></span></div><div class="line"><span class="tag">                <span class="attr">name</span>=<span class="string">"userId"</span></span></div><div class="line"><span class="tag">                <span class="attr">v-validate</span>=<span class="string">"'required'"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"invalid-feedback"</span></span></div><div class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"display:block;"</span>&gt;</span>&#123;&#123; errors.first('userId') &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"password"</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></div><div class="line"><span class="tag">                <span class="attr">class</span>=<span class="string">"form-control"</span></span></div><div class="line"><span class="tag">                <span class="attr">id</span>=<span class="string">"password"</span></span></div><div class="line"><span class="tag">                <span class="attr">name</span>=<span class="string">"password"</span></span></div><div class="line"><span class="tag">                <span class="attr">v-validate</span>=<span class="string">"'required'"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"invalid-feedback"</span></span></div><div class="line"><span class="tag">                <span class="attr">style</span>=<span class="string">"display:block;"</span>&gt;</span>&#123;&#123; errors.first('password') &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span></span></div><div class="line"><span class="tag">            @<span class="attr">click.prevent</span>=<span class="string">"submitProcess()"</span>&gt;</span>登入<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>同樣是Validation Component的script區塊中宣告</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Vue的methods option中加入「submitProcess」method</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  name: <span class="string">"Validation"</span>,</div><div class="line">  data() &#123;</div><div class="line">    <span class="keyword">return</span> &#123;&#125;;</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    submitProcess: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.$validator.validateAll().then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">if</span> (result) &#123;</div><div class="line">          <span class="comment">//可以實作呼叫API</span></div><div class="line">          alert(<span class="string">"Form Submitted!"</span>);</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        alert(<span class="string">"Correct them errors!"</span>);</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>為了美化版面，適當的加入其他版面配置語法，Validation Component完整語法</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"validation"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 採用`justify-content-center`的配置，讓區塊置中 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row justify-content-center"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-4"</span>&gt;</span></div><div class="line">                <span class="comment">&lt;!-- 採用`cards`的配置 --&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span>登入<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-body"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"userId"</span>&gt;</span>UserId<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></div><div class="line"><span class="tag">                                       <span class="attr">class</span>=<span class="string">"form-control"</span></span></div><div class="line"><span class="tag">                                       <span class="attr">id</span>=<span class="string">"userId"</span></span></div><div class="line"><span class="tag">                                       <span class="attr">name</span>=<span class="string">"userId"</span></span></div><div class="line"><span class="tag">                                       <span class="attr">v-validate</span>=<span class="string">"'required'"</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"invalid-feedback"</span></span></div><div class="line"><span class="tag">                                     <span class="attr">style</span>=<span class="string">"display:block;"</span>&gt;</span></div><div class="line">                                    &#123;&#123; errors.first('userId') &#125;&#125;</div><div class="line">                                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"password"</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></div><div class="line"><span class="tag">                                       <span class="attr">class</span>=<span class="string">"form-control"</span></span></div><div class="line"><span class="tag">                                       <span class="attr">id</span>=<span class="string">"password"</span></span></div><div class="line"><span class="tag">                                       <span class="attr">name</span>=<span class="string">"password"</span></span></div><div class="line"><span class="tag">                                       <span class="attr">v-validate</span>=<span class="string">"'required'"</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"invalid-feedback"</span></span></div><div class="line"><span class="tag">                                     <span class="attr">style</span>=<span class="string">"display:block;"</span>&gt;</span></div><div class="line">                                    &#123;&#123; errors.first('password') &#125;&#125;</div><div class="line">                                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                            <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span></span></div><div class="line"><span class="tag">                                    @<span class="attr">click.prevent</span>=<span class="string">"submitProcess()"</span>&gt;</span>登入<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="javascript">  name: <span class="string">"Validation"</span>,</span></div><div class="line"><span class="undefined">  data() &#123;</span></div><div class="line"><span class="javascript">    <span class="keyword">return</span> &#123;&#125;;</span></div><div class="line"><span class="undefined">  &#125;,</span></div><div class="line"><span class="undefined">  methods: &#123;</span></div><div class="line"><span class="javascript">    submitProcess: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="javascript">      <span class="keyword">this</span>.$validator.validateAll().then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span></div><div class="line"><span class="javascript">        <span class="keyword">if</span> (result) &#123;</span></div><div class="line"><span class="javascript">          <span class="comment">//可以實作呼叫API</span></span></div><div class="line"><span class="javascript">          alert(<span class="string">"Form Submitted!"</span>);</span></div><div class="line"><span class="javascript">          <span class="keyword">return</span>;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="javascript">        alert(<span class="string">"Correct them errors!"</span>);</span></div><div class="line"><span class="undefined">      &#125;);</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined">&#125;;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>擴充<code>router</code>，<code>router/index.js</code>增加連到<code>Validation</code> Component的連結</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Validation <span class="keyword">from</span> <span class="string">'@/components/Validation'</span></div><div class="line"><span class="comment">// routes陣列中增加</span></div><div class="line">&#123;</div><div class="line">    path: <span class="string">'validation'</span>,</div><div class="line">    name: <span class="string">'ValidationDemo'</span>,</div><div class="line">    component: Validation</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>改造<code>navbar</code>裡的Menu</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 加一條`router-link`，連到上面設定的`route path` --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123; path: '/validation' &#125;"</span> <span class="attr">class</span>=<span class="string">"dropdown-item"</span>&gt;</span>vee-validate<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>實際效果</p>
+</div><div class="figure figure--fullWidth"><img class="figure-img" src="ValidationDemo.gif" alt="[ValidationDemo]"><span class="caption">[ValidationDemo]</span></div><div class="main-content-wrap">
+</li>
+</ol>
 <h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
-<p>介紹了這麼多VSCode的實用功能，這篇還僅介紹VSCode原生有的功能，尚未加入外掛部份；無論開發哪種語言，找尋適當的外掛配合原生諸多便利功能，筆者相信寫起程式來，應該是得心應手。下篇會整理dotnet core開發相關外掛介紹。</p>
+<p>以上，簡單的套用<code>validation</code>效果，我覺得<code>vee-validate</code>已經算很容易套用，下一篇會介紹其屬性使用及進階應用，這篇就到這邊，詳細code請參考<a href="https://github.com/EugeneSu0515/VueDemoApp.git" target="_blank" rel="external">https://github.com/EugeneSu0515/VueDemoApp.git</a></p>
 
             
         </div>
@@ -373,7 +313,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/dotnet-core/">dotnet core</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vscode/">vscode</a>
+    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vee-validate/">vee-validate</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/vue/">vue</a>
 
             </div>
         
@@ -383,7 +323,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/"  data-tooltip="VSCode技巧：解決RazorView中Emmet失效問題">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/06/25/Vue套件介紹：axios/"  data-tooltip="Vue套件介紹：axios">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -391,7 +331,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/11/dotnet-core系列文章一：安裝/" data-tooltip="dotnet-core系列文章一：安裝">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/06/25/Vue系列文章五：Vue-Instance與Component/" data-tooltip="Vue系列文章五：Vue Instance與Component">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -409,7 +349,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -417,7 +357,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -425,7 +365,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -475,7 +415,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/"  data-tooltip="VSCode技巧：解決RazorView中Emmet失效問題">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/06/25/Vue套件介紹：axios/"  data-tooltip="Vue套件介紹：axios">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -483,7 +423,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2017/09/11/dotnet-core系列文章一：安裝/" data-tooltip="dotnet-core系列文章一：安裝">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/06/25/Vue系列文章五：Vue-Instance與Component/" data-tooltip="Vue系列文章五：Vue Instance與Component">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -501,7 +441,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/">
                     <i class="fa fa-facebook-official"></i>
                 </a>
             </li>
@@ -509,7 +449,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/">
                     <i class="fa fa-twitter"></i>
                 </a>
             </li>
@@ -517,7 +457,7 @@
             
             
             <li class="post-action hide-xs">
-                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/">
                     <i class="fa fa-google-plus"></i>
                 </a>
             </li>
@@ -548,7 +488,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/">
                     <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
                 </a>
             </li>
@@ -556,7 +496,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/">
                     <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
                 </a>
             </li>
@@ -564,7 +504,7 @@
             
             
             <li class="share-option">
-                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/">
                     <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
                 </a>
             </li>
@@ -876,9 +816,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/';
+                 this.page.url = 'http://eugenesu0515.github.io/2018/06/25/Vue套件介紹：vee-validate/';
                  
-                    this.page.identifier = '2017/09/12/dotnet-core系列文章二：VSCode教學/';
+                    this.page.identifier = '2018/06/25/Vue套件介紹：vee-validate/';
                  
              };
             (function() {
