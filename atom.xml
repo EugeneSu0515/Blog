@@ -6,7 +6,7 @@
   <link href="/Blog/atom.xml" rel="self"/>
   
   <link href="http://eugenesu0515.github.io/"/>
-  <updated>2018-09-03T15:06:27.904Z</updated>
+  <updated>2019-04-22T02:25:14.280Z</updated>
   <id>http://eugenesu0515.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Windows工具]Keypirinha介紹</title>
+    <link href="http://eugenesu0515.github.io/2019/04/21/Windows%E5%B7%A5%E5%85%B7-Keypirinha%E4%BB%8B%E7%B4%B9/"/>
+    <id>http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/</id>
+    <published>2019-04-21T13:46:18.000Z</published>
+    <updated>2019-04-22T02:25:14.280Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr><p>筆者使用Mac系統時，非常地依賴<code>Spotlight</code>功能，當時選擇使用擴充功能更齊全的<code>Alfred</code>，主要是純使用鍵盤就能完成所有的事情，是筆者這種寫程式的人追求的境界阿。</p><p>換到Windows10的環境時，會想要有類似的工具可使用，筆者起初使用的軟體為<a href="http://www.wox.one/" target="_blank" rel="external">Wox</a>，但是常遇到當掉需要重開的狀況，查找了一下終於遇到讓我愛不釋手的工具，就是這個文章的主角<a href="http://keypirinha.com/" target="_blank" rel="external">keypirinha</a>。</p><a id="more"></a><h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr><h3 id="安裝方式"><a href="#安裝方式" class="headerlink" title="安裝方式"></a>安裝方式</h3><p>筆者這邊使用<code>choco install</code>的方式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">choco install kepirinha -y</div></pre></td></tr></table></figure></p><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><p>按下<code>ctrl+win+k</code>，就會出現keypirinha。<br><img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaLaunch.jpg" alt="[KeypirinhaLaunch]" title="[KeypirinhaLaunch]"></p><h3 id="開機自動執行設定"><a href="#開機自動執行設定" class="headerlink" title="開機自動執行設定"></a>開機自動執行設定</h3><p>再來設定開機時自動執行，不要再用把建立捷徑，並將捷徑拉近<code>啟動</code>資料夾中，筆者直接使用keypirinha開放的configure的方式設定。</p><ul><li>開啟<code>keypirinha</code>主視窗後，按下<code>Configure</code>，選擇<code>Keypirinha:Configure</code></li><li>會開啟兩個文字檔案，名為<code>User</code>的是使用者自行設定，設定方式為<a href="https://zh.wikipedia.org/wiki/INI%E6%96%87%E4%BB%B6" target="_blank" rel="external">ini檔案格式</a></li><li>設定<code>section</code>為<code>app</code>，將<code>launch_at_startup</code>屬性設定為<code>yes</code>，存檔即可，會在下次開機時生效<img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaConfigure.jpg" alt="[KeypirinhaConfigure]" title="[KeypirinhaConfigure]"></li></ul><h3 id="Package-Control"><a href="#Package-Control" class="headerlink" title="Package Control"></a>Package Control</h3><p>其實跟<code>Wox</code>一樣，<code>Keypirinha</code>開放許多第三方套件，安裝方式官方建議使用 <a href="https://github.com/ueffel/Keypirinha-PackageControl" target="_blank" rel="external">keypirinha package control</a>。安裝方式則README.md所寫，需使用到<code>kepirinha</code>的<code>console</code>功能。</p><p>按下<code>ctrl+win+k</code>跳出keypirinha視窗後，輸入關鍵字：<code>console</code>搜尋，選擇<code>Keypirinha:console</code>功能項目<br><img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaConsoleLaunch.jpg" alt="[KeypirinhaConsoleLaunch]" title="[KeypirinhaConsoleLaunch]"></p><p>出現Keypirinha專屬打指令的視窗後鍵入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import keypirinha as kp,keypirinha_net as kpn,os;p=<span class="string">"PackageControl.keypirinha-package"</span>;d=kpn.build_urllib_opener().open(<span class="string">"https://github.com/ueffel/Keypirinha-PackageControl/releases/download/1.0.0/"</span>+p);pb=d.read();d.close();f=open(os.path.join(kp.installed_package_dir(),p),<span class="string">"wb"</span>);f.write(pb);f.close()</div></pre></td></tr></table></figure></p><img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaConsole.jpg" alt="[KeypirinhaConsole]" title="[KeypirinhaConsole]"><h3 id="推薦第三方套件"><a href="#推薦第三方套件" class="headerlink" title="推薦第三方套件"></a>推薦第三方套件</h3><p>基本上安裝好<code>keypirinha</code>後，已經有預設的套件，如下：</p><ul><li>Bookmarks</li><li>Calc</li><li><p>Everything</p><ul><li>需要自己爾外安裝<code>Everything</code> 軟體<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">choco install everything -y</div></pre></td></tr></table></figure></li></ul></li><li><p>FileBrowser</p></li><li>FilesCatalog</li><li>FileZilla</li><li>GoogleTranslate</li><li>PuTTY</li><li>TaskSwitcher</li><li>URL</li><li>WebSearch</li><li>WebSuggest</li><li>WinSCP</li></ul><p>筆者自己需求，另安裝的如下：</p><ul><li><p>VolumeControl<br>該套件則因人而異，筆者環境是為省桌面空間，筆電會合起來並立於直立架中，接上外接螢幕使用。且現在最上手的<code>FILCO Majestouch 2 NINJA 87鍵</code>紅軸，沒有音量調整的按鍵阿，用滑鼠去調整，實在是懶，有了該套件，我可以用鍵盤快捷鍵的方式調整音量，救星阿。</p><ul><li>只要在打開<code>keypirinha</code>主視窗後按下<code>vol</code>就可以調整音量了<img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/VolumeControlLaunch.jpg" alt="[VolumeControl]" title="[VolumeControl]"></li><li>你只要按下想設定的音量數字，選項中會出現SetVolumeTo{你設定的音量數字}<img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/VolumeControlSetting.jpg" alt="[VolumeControlSetting]" title="[VolumeControlSetting]"></li></ul></li><li><p>WindowsApps<br><code>Keypirinha</code>預設無法搜尋到使用「Windows市集」下載安裝的軟體，裝好該套件後才會被搜尋到，滿實用的一個套件。</p></li><li>SystemCommands<br>關機、重新啟動等系統操作命令，裝好該套件後，於<code>keypirinha</code>上完成，對筆者來說也滿實用的。完整指令則<a href="https://github.com/psistorm/keypirinha-systemcommands" target="_blank" rel="external"><code>參考</code></a>。</li><li>UrlShortener<br>這套件有點可惜，因google短網址服務已經終止<a href="https://www.engadget.com/2018/03/30/google-shutting-down-goo-gl-url-shortening-service/" target="_blank" rel="external"><code>參考</code></a>，無法繼續使用了。</li></ul><h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr><p>筆者每次重灌系統後，一定會先安裝<code>choco</code>跟<code>keypirinha</code>阿，實在是太愛使用他們了，為筆者日常使用電腦帶來方便，在此推薦給大家。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前提情要&quot;&gt;&lt;a href=&quot;#前提情要&quot; class=&quot;headerlink&quot; title=&quot;前提情要&quot;&gt;&lt;/a&gt;前提情要&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;筆者使用Mac系統時，非常地依賴&lt;code&gt;Spotlight&lt;/code&gt;功能，當時選擇使用擴充功能更齊全的&lt;code&gt;Alfred&lt;/code&gt;，主要是純使用鍵盤就能完成所有的事情，是筆者這種寫程式的人追求的境界阿。&lt;/p&gt;
+&lt;p&gt;換到Windows10的環境時，會想要有類似的工具可使用，筆者起初使用的軟體為&lt;a href=&quot;http://www.wox.one/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wox&lt;/a&gt;，但是常遇到當掉需要重開的狀況，查找了一下終於遇到讓我愛不釋手的工具，就是這個文章的主角&lt;a href=&quot;http://keypirinha.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;keypirinha&lt;/a&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="win10" scheme="http://eugenesu0515.github.io/tags/win10/"/>
+    
+      <category term="keypirinha" scheme="http://eugenesu0515.github.io/tags/keypirinha/"/>
+    
+  </entry>
   
   <entry>
     <title>[Flutter]初遇Flutter</title>

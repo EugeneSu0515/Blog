@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Eugene Su">
+    <title>[Windows工具]Keypirinha介紹 - Eugene Su</title>
+    <meta name="author" content="Eugene Su">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/Blog/atom.xml">
+    
+    <meta name="description" content="前提情要 筆者使用Mac系統時，非常地依賴Spotlight功能，當時選擇使用擴充功能更齊全的Alfred，主要是純使用鍵盤就能完成所有的事情，是筆者這種寫程式的人追求的境界阿。 換到Windows10的環境時，會想要有類似的工具可使用，筆者起初使用的軟體為Wox，但是常遇到當掉需要重開的狀況，查找了一下終於遇到讓我愛不釋手的工具，就是這個文章的主角keypirinha。">
+<meta name="keywords" content="win10,keypirinha">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="[Windows工具]Keypirinha介紹">
+<meta property="og:url" content="http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/index.html">
+<meta property="og:site_name" content="Eugene Su">
+<meta property="og:description" content="前提情要 筆者使用Mac系統時，非常地依賴Spotlight功能，當時選擇使用擴充功能更齊全的Alfred，主要是純使用鍵盤就能完成所有的事情，是筆者這種寫程式的人追求的境界阿。 換到Windows10的環境時，會想要有類似的工具可使用，筆者起初使用的軟體為Wox，但是常遇到當掉需要重開的狀況，查找了一下終於遇到讓我愛不釋手的工具，就是這個文章的主角keypirinha。">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaLaunch.jpg">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaConfigure.jpg">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaConsoleLaunch.jpg">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaConsole.jpg">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2019/04/21/Windows工具-Keypirinha介紹/VolumeControlLaunch.jpg">
+<meta property="og:image" content="http://eugenesu0515.github.io/Blog/2019/04/21/Windows工具-Keypirinha介紹/VolumeControlSetting.jpg">
+<meta property="og:updated_time" content="2019-04-22T02:25:14.280Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Windows工具]Keypirinha介紹">
+<meta name="twitter:description" content="前提情要 筆者使用Mac系統時，非常地依賴Spotlight功能，當時選擇使用擴充功能更齊全的Alfred，主要是純使用鍵盤就能完成所有的事情，是筆者這種寫程式的人追求的境界阿。 換到Windows10的環境時，會想要有類似的工具可使用，筆者起初使用的軟體為Wox，但是常遇到當掉需要重開的狀況，查找了一下終於遇到讓我愛不釋手的工具，就是這個文章的主角keypirinha。">
+<meta name="twitter:image" content="http://eugenesu0515.github.io/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaLaunch.jpg">
+<meta name="twitter:creator" content="@Eugene_Su">
+    
+        <link rel="publisher" href="https://plus.google.com/beckhamnaing72"/>
+    
+    
+        
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/e6ca445a85d16acdce3d64b521812cb8?s=140"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/Blog/assets/css/style-sxklfps8ywgfyyjcowvnb4gxdgt0zjts3hsguljmv9uqanxjbnitrovtbrek.min.css">
+    <!--STYLES END-->
+    
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="5">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/Blog/ ">Eugene Su</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="http://www.gravatar.com/avatar/e6ca445a85d16acdce3d64b521812cb8?s=140" alt="作者的圖片"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="5">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/Blog/#about">
+                    <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/e6ca445a85d16acdce3d64b521812cb8?s=140" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">Eugene Su</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>這裡記載技術與生活點滴</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/Blog/ "
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/Blog/all-categories"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/Blog/all-tags"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/Blog/all-archives"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link open-algolia-search"
+                             href="#search"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                        <span class="sidebar-button-desc">搜尋</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/EugeneSu0515/" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://twitter.com/Eugene_Su" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                        <span class="sidebar-button-desc">Twitter</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://facebook.com/eugene.su1" target="_blank" rel="noopener">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/Blog/atom.xml"
+                            
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="5"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            [Windows工具]Keypirinha介紹
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2019-04-21T21:46:18+08:00">
+	
+		    4月 21, 2019
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>筆者使用Mac系統時，非常地依賴<code>Spotlight</code>功能，當時選擇使用擴充功能更齊全的<code>Alfred</code>，主要是純使用鍵盤就能完成所有的事情，是筆者這種寫程式的人追求的境界阿。</p>
+<p>換到Windows10的環境時，會想要有類似的工具可使用，筆者起初使用的軟體為<a href="http://www.wox.one/" target="_blank" rel="external">Wox</a>，但是常遇到當掉需要重開的狀況，查找了一下終於遇到讓我愛不釋手的工具，就是這個文章的主角<a href="http://keypirinha.com/" target="_blank" rel="external">keypirinha</a>。</p>
+<a id="more"></a>
+<h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><hr>
+<h3 id="安裝方式"><a href="#安裝方式" class="headerlink" title="安裝方式"></a>安裝方式</h3><p>筆者這邊使用<code>choco install</code>的方式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">choco install kepirinha -y</div></pre></td></tr></table></figure></p>
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><p>按下<code>ctrl+win+k</code>，就會出現keypirinha。<br><img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaLaunch.jpg" alt="[KeypirinhaLaunch]" title="[KeypirinhaLaunch]"></p>
+<h3 id="開機自動執行設定"><a href="#開機自動執行設定" class="headerlink" title="開機自動執行設定"></a>開機自動執行設定</h3><p>再來設定開機時自動執行，不要再用把建立捷徑，並將捷徑拉近<code>啟動</code>資料夾中，筆者直接使用keypirinha開放的configure的方式設定。</p>
+<ul>
+<li>開啟<code>keypirinha</code>主視窗後，按下<code>Configure</code>，選擇<code>Keypirinha:Configure</code></li>
+<li>會開啟兩個文字檔案，名為<code>User</code>的是使用者自行設定，設定方式為<a href="https://zh.wikipedia.org/wiki/INI%E6%96%87%E4%BB%B6" target="_blank" rel="external">ini檔案格式</a></li>
+<li>設定<code>section</code>為<code>app</code>，將<code>launch_at_startup</code>屬性設定為<code>yes</code>，存檔即可，會在下次開機時生效<img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaConfigure.jpg" alt="[KeypirinhaConfigure]" title="[KeypirinhaConfigure]">
+</li>
+</ul>
+<h3 id="Package-Control"><a href="#Package-Control" class="headerlink" title="Package Control"></a>Package Control</h3><p>其實跟<code>Wox</code>一樣，<code>Keypirinha</code>開放許多第三方套件，安裝方式官方建議使用 <a href="https://github.com/ueffel/Keypirinha-PackageControl" target="_blank" rel="external">keypirinha package control</a>。安裝方式則README.md所寫，需使用到<code>kepirinha</code>的<code>console</code>功能。</p>
+<p>按下<code>ctrl+win+k</code>跳出keypirinha視窗後，輸入關鍵字：<code>console</code>搜尋，選擇<code>Keypirinha:console</code>功能項目<br><img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaConsoleLaunch.jpg" alt="[KeypirinhaConsoleLaunch]" title="[KeypirinhaConsoleLaunch]"></p>
+<p>出現Keypirinha專屬打指令的視窗後鍵入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import keypirinha as kp,keypirinha_net as kpn,os;p=<span class="string">"PackageControl.keypirinha-package"</span>;d=kpn.build_urllib_opener().open(<span class="string">"https://github.com/ueffel/Keypirinha-PackageControl/releases/download/1.0.0/"</span>+p);pb=d.read();d.close();f=open(os.path.join(kp.installed_package_dir(),p),<span class="string">"wb"</span>);f.write(pb);f.close()</div></pre></td></tr></table></figure></p>
+<img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/KeypirinhaConsole.jpg" alt="[KeypirinhaConsole]" title="[KeypirinhaConsole]">
+<h3 id="推薦第三方套件"><a href="#推薦第三方套件" class="headerlink" title="推薦第三方套件"></a>推薦第三方套件</h3><p>基本上安裝好<code>keypirinha</code>後，已經有預設的套件，如下：</p>
+<ul>
+<li>Bookmarks</li>
+<li>Calc</li>
+<li><p>Everything</p>
+<ul>
+<li>需要自己爾外安裝<code>Everything</code> 軟體<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">choco install everything -y</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>FileBrowser</p>
+</li>
+<li>FilesCatalog</li>
+<li>FileZilla</li>
+<li>GoogleTranslate</li>
+<li>PuTTY</li>
+<li>TaskSwitcher</li>
+<li>URL</li>
+<li>WebSearch</li>
+<li>WebSuggest</li>
+<li>WinSCP</li>
+</ul>
+<p>筆者自己需求，另安裝的如下：</p>
+<ul>
+<li><p>VolumeControl<br>該套件則因人而異，筆者環境是為省桌面空間，筆電會合起來並立於直立架中，接上外接螢幕使用。且現在最上手的<code>FILCO Majestouch 2 NINJA 87鍵</code>紅軸，沒有音量調整的按鍵阿，用滑鼠去調整，實在是懶，有了該套件，我可以用鍵盤快捷鍵的方式調整音量，救星阿。</p>
+<ul>
+<li>只要在打開<code>keypirinha</code>主視窗後按下<code>vol</code>就可以調整音量了<img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/VolumeControlLaunch.jpg" alt="[VolumeControl]" title="[VolumeControl]"></li>
+<li>你只要按下想設定的音量數字，選項中會出現SetVolumeTo{你設定的音量數字}<img src="/Blog/2019/04/21/Windows工具-Keypirinha介紹/VolumeControlSetting.jpg" alt="[VolumeControlSetting]" title="[VolumeControlSetting]">
+</li>
+</ul>
+</li>
+<li><p>WindowsApps<br><code>Keypirinha</code>預設無法搜尋到使用「Windows市集」下載安裝的軟體，裝好該套件後才會被搜尋到，滿實用的一個套件。</p>
+</li>
+<li>SystemCommands<br>關機、重新啟動等系統操作命令，裝好該套件後，於<code>keypirinha</code>上完成，對筆者來說也滿實用的。完整指令則<a href="https://github.com/psistorm/keypirinha-systemcommands" target="_blank" rel="external"><code>參考</code></a>。</li>
+<li>UrlShortener<br>這套件有點可惜，因google短網址服務已經終止<a href="https://www.engadget.com/2018/03/30/google-shutting-down-goo-gl-url-shortening-service/" target="_blank" rel="external"><code>參考</code></a>，無法繼續使用了。</li>
+</ul>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><hr>
+<p>筆者每次重灌系統後，一定會先安裝<code>choco</code>跟<code>keypirinha</code>阿，實在是太愛使用他們了，為筆者日常使用電腦帶來方便，在此推薦給大家。</p>
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/Blog/tags/keypirinha/">keypirinha</a> <a class="tag tag--primary tag--small t-link" href="/Blog/tags/win10/">win10</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/09/03/Flutter-初遇Flutter/" data-tooltip="[Flutter]初遇Flutter">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2019 Eugene Su. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Blog/2018/09/03/Flutter-初遇Flutter/" data-tooltip="[Flutter]初遇Flutter">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/">
+                    <i class="fa fa-facebook-official"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/">
+                    <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/">
+                    <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/">
+                    <i class="fa fa-google-plus"></i><span>分享到 Google+</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/e6ca445a85d16acdce3d64b521812cb8?s=140" alt="作者的圖片"/>
+        
+            <h4 id="about-card-name">Eugene Su</h4>
+        
+            <div id="about-card-bio"><p>這裡記載技術與生活點滴</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>軟體工程師</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Taipei
+            </div>
+        
+    </div>
+</div>
+
+        <div id="algolia-search-modal" class="modal-container">
+    <div class="modal">
+        <div class="modal-header">
+            <span class="close-button"><i class="fa fa-close"></i></span>
+            <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+                <span class="searchby-algolia-text text-color-light text-small">by</span>
+                <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+            </a>
+            <i class="search-icon fa fa-search"></i>
+            <form id="algolia-search-form">
+                <input type="text" id="algolia-search-input" name="search"
+                    class="form-control input--large search-input" placeholder="Search "
+                    />
+            </form>
+        </div>
+        <div class="modal-body">
+            <div class="no-result text-color-light text-center">沒有找到文章</div>
+            <div class="results">
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2017/09/11/dotnet-core系列文章一：安裝/">
+                            <h3 class="media-heading">dotnet-core系列文章一：安裝</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年9月11日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>目前微軟於「2017/08/14」正式發佈dotnet core2.0.0後，實作API數比版本1足足多了兩倍之多，是該進場的時候了。</p>
+<p>身為ASP.NET開發者，以往都會限制於IIS Web Server才能架站，dotnet core本身跨平台的特性，且宿主不限制於IIS Web Server，加上僅開啟Visual Studio Code就可開發C#相關程式(設備配備不好的情況下超適用)，上述種種因素，是該投資時間研究dotnet core的時候了。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2017/09/12/dotnet-core系列文章二：VSCode教學/">
+                            <h3 class="media-heading">dotnet-core系列文章二：VSCode教學</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年9月12日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>上一篇講到開發dotnet core相關程式，論語說「工欲善其事，必先利其器」，相當然爾，熟悉開發工具這件事情直接影響你的開發產能。因筆者現況，公司配的桌機跟自己的筆電配備上有落差，以不耗系統資源的考量下，下定決心將「Visual Studio Code」作為首選開發工具。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2017/09/16/VSCode技巧：解決RazorView中Emmet失效問題/">
+                            <h3 class="media-heading">VSCode技巧：解決RazorView中Emmet失效問題</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2017年9月16日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>身為Web及.net MVC開發者來說，多多少少會有機會寫到Razor View。筆者因工作上曾擔任過SA一陣子，工作內容包含劃Prototype頁面與客戶溝通作業流程及操作方式，當時案子套版基底是使用<a href="https://getbootstrap.com/docs/3.3/" target="_blank" rel="external">Bootstrap3</a>，知道需要長時間使用Bootstrap，因此筆者有下功夫熟悉它的css class。且那時有幸已知道<strong>ZenCoding</strong>(Emmet)這玩意，詳細可參考 <a href="http://blog.kkbruce.net/2012/11/zen-coding-extremely-speed-write-your-html5-css3-code.html#.Wb0uksgjGUk" target="_blank" rel="external">ZEN-CODING - 教你極速撰寫HTML5與CSS3程式碼</a>(筆者當年就被這篇文章燒到)。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2018/04/21/VSCode技巧：vue開發套件vetur相關設定/">
+                            <h3 class="media-heading">VSCode技巧：vue開發套件vetur相關設定</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2018年4月21日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>目前專案選擇<a href="https://vuejs.org/" target="_blank" rel="external">vue.js</a>作為前端開發使用Framework，開發工具選擇VsCode的狀況下，筆者搜尋一下相關plugins，發現<a href="https://github.com/vuejs/vetur" target="_blank" rel="external">vetur</a>下載率很高，含基本的</p>
+<ul>
+<li><code>syntax highlighting</code> </li>
+<li><code>Snippet</code> </li>
+<li><code>Auto Completion</code></li>
+</ul>
+<p>對筆者來說已足夠，趕緊下載來試用。稍微觀看一下該套件格式化相關設定，對於vue webpack template開發來說，需要再手動設定。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2018/04/23/VSCode技巧：檔案比對差異/">
+                            <h3 class="media-heading">VSCode技巧：檔案比對差異</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2018年4月23日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>多人開發的專案，最容易發生的衝突是設定檔案，如Vue專案中<code>router/index.js</code>，每個人的各自component需要import與設定其url，筆者公司採用<a href="https://subversion.apache.org/" target="_blank" rel="external">svn</a>作為版空工具，在各自處理衝突的情況下，該檔案真的是不堪入目。</p>
+<p>時間一久，可能連routing功能都會被影響到，因檔案亂掉的關係，有些url失效或者設定階層不對，連Layout都長不出來，給客戶測試前，是必須整理一下了。</p>
+<p>因有layout關係，必須將其他component所屬url必須放置於layout的children設定中，有些人沒有仔細看就直接將設定寫在layout同層，有些url還被設定到兩次，太氣了，讓筆者murmur一下。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2018/04/23/Vue系列文章一：Vue簡介/">
+                            <h3 class="media-heading">Vue系列文章一：Vue簡介</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2018年4月23日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>目前公司開發產品選擇<a href="https://vuefe.cn/v2/guide/" target="_blank" rel="external">vue.js</a>作為前端開發框架，選擇原因不外呼是</p>
+<ul>
+<li>容易上手</li>
+<li>考量到產品之後會由大陸團隊接手</li>
+<li>Virtual Dom設計，效能方面不需要擔心</li>
+</ul></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2018/04/25/Vue系列文章二：VueWepackTemplate檔案結構介紹/">
+                            <h3 class="media-heading">Vue系列文章二：VueWepackTemplate檔案結構介紹</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2018年4月25日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>上一篇介紹到<code>vue-cli</code>建立vue application，其中筆者示範選擇以<code>webpack template</code>作為預設專案結構。這一篇就來簡單介紹一下專案中的檔案結構以及經驗分享。</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2018/05/24/Vue系列文章三：Vue基本語法/">
+                            <h3 class="media-heading">Vue系列文章三：Vue基本語法</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2018年5月24日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>前兩篇的基本設置教學，筆者相信大家已學會基本設定並撰寫vue application，此篇介紹基本語法及應用並說明。</p>
+<p>此篇雖然想以<a href="https://vuejs.org/v2/guide/" target="_blank" rel="external">Vue官網教學</a>順序做介紹，但筆者認為已學會某種技術，應該是要以自己角度分類並介紹，且要加上經驗分享，還可藉由驗證自己的不足，因此若不習慣內容編排方式，多加見諒。</p>
+<p>簡單介紹一下筆者接下來會使用的環境如下：</p>
+<ul>
+<li>編輯器：<a href="https://code.visualstudio.com/" target="_blank" rel="external">VisualStudioCode</a></li>
+<li>Vue版本：2.4.2 &uarr;</li>
+<li>Chrome Extension: <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd" target="_blank" rel="external">Vue.js dev tools</a></li>
+<li>VsCode Extension: <a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" target="_blank" rel="external">vetur</a></li>
+<li>Vue App結構採用<code>webpack full</code>Template專案</li>
+</ul></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2018/06/22/Vue系列文章四：Vue Directive/">
+                            <h3 class="media-heading">Vue系列文章四：Vue Directive</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2018年6月22日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>前一篇已介紹了Vue基本語法，筆者相信應該是有辦法撰寫簡單的邏輯，接下來這一篇介紹<code>v開頭directive</code>相關技巧及知識，筆者使用工具及環境參考上一篇「Vue基本語法」。<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://eugenesu0515.github.io/2018/06/25/Vue系列文章五：Vue-Instance與Component/">
+                            <h3 class="media-heading">Vue系列文章五：Vue Instance與Component</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2018年6月25日
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><hr>
+<p>前面兩篇講了vue相關的語法，是不是覺得少了點什麼，這篇是重頭戲，介紹Vue Instance宣告時有哪些options可設定，有什麼樣的相關技巧以及Component的應用，筆者就以自身開發角度分享實戰經驗。<br></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <p class="results-count text-medium"
+                data-message-zero="沒有找到文章"
+                data-message-one="找到 1 篇文章"
+                data-message-other="找到 {n} 篇文章">
+                找到 16 篇文章
+            </p>
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/Blog/assets/images/cover.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/Blog/assets/js/script-ivwiy10zeb8fifc4swnhkwneuk64y53w2scmdmtp8thi9cqfxh31aowtroaz.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://eugenesu0515.github.io/2019/04/21/Windows工具-Keypirinha介紹/';
+                 
+                    this.page.identifier = '2019/04/21/Windows工具-Keypirinha介紹/';
+                 
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'EugeneSu';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+        var algoliaClient = algoliasearch('N3Q7RDUX9T', 'c53935fd49e62e1b8fa0233625fefb51');
+        var algoliaIndex = algoliaClient.initIndex('eugene_su_hexo_blog');
+    </script>
+
+    </body>
+</html>
