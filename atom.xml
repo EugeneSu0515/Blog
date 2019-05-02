@@ -6,7 +6,7 @@
   <link href="/Blog/atom.xml" rel="self"/>
   
   <link href="http://eugenesu0515.github.io/"/>
-  <updated>2019-04-22T02:25:14.280Z</updated>
+  <updated>2019-05-02T10:32:00.094Z</updated>
   <id>http://eugenesu0515.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VSCode技巧：設定cmder為主要teminal</title>
+    <link href="http://eugenesu0515.github.io/2019/05/02/VSCode%E6%8A%80%E5%B7%A7%EF%BC%9A%E8%A8%AD%E5%AE%9Acmder%E7%82%BA%E4%B8%BB%E8%A6%81teminal/"/>
+    <id>http://eugenesu0515.github.io/2019/05/02/VSCode技巧：設定cmder為主要teminal/</id>
+    <published>2019-05-02T08:36:51.000Z</published>
+    <updated>2019-05-02T10:32:00.094Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前提情要"><a href="#前提情要" class="headerlink" title="前提情要"></a>前提情要</h2><p>這篇主要是筆者因於 windows 環境下，習慣使用<code>cmder</code>作為主要 terminal，因最近又開始撰寫 vue 專案，使用<code>vscode</code>作為主要編輯器，因 vscode 本身有提供<code>terminal</code>介面，不離開編輯器狀況下，可以完成下指令動作。<br>因主要指令視窗開啟後，vscode 會跳出「可以設定預設 terminal」提醒視窗，筆者就來設定將<code>cmder</code>作為<code>vscode</code>的主要 terminal。</p><a id="more"></a><!-- toc --><h2 id="內容"><a href="#內容" class="headerlink" title="內容"></a>內容</h2><h3 id="安裝-cmder"><a href="#安裝-cmder" class="headerlink" title="安裝 cmder"></a>安裝 cmder</h3><p>筆者這邊使用<code>choco</code>來安裝</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">choco install cmder -y</div></pre></td></tr></table></figure><p>安裝路徑會在<code>C:\tools\Cmder</code>，筆者這邊先設定好<code>以Administrator身份執行</code>，到時下某些指令需要有 administrator 身份時不需要再另開，設定方式參考下圖。<br><img src="/Blog/2019/05/02/VSCode技巧：設定cmder為主要teminal/cmder_excute_as_administrator.jpg" alt="[cmder_excute_as_administrator]" title="[cmder_excute_as_administrator]"></p><h3 id="安裝-VSCode"><a href="#安裝-VSCode" class="headerlink" title="安裝 VSCode"></a>安裝 VSCode</h3><p>筆者這邊使用<code>choco</code>來安裝</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">choco install vscode -y</div></pre></td></tr></table></figure><p>VSCode 相關教學，請參考 <a href="/Blog/2017/09/12/dotnet-core系列文章二：VSCode教學/" title="dotnet-core系列文章二：VSCode教學">dotnet-core系列文章二：VSCode教學</a></p><h3 id="VSCode-上設定主要-teminal"><a href="#VSCode-上設定主要-teminal" class="headerlink" title="VSCode 上設定主要 teminal"></a>VSCode 上設定主要 teminal</h3><hr><p>我們使用快捷鍵<code>Ctrl+,</code>開啟<code>User Settings</code>，請使用 json 格式設定，設定上比較快。請按右上角的<code>{}</code>符號，即可開啟以<code>json格式</code>設定視窗。<br><img src="/Blog/2019/05/02/VSCode技巧：設定cmder為主要teminal/cmder_open_user_settings.jpg" alt="[cmder_open_user_settings]" title="[cmder_open_user_settings]"><br>點擊<code>{}</code>符號後，會看到以下圖，會另開 tab 的方式開啟以<code>json格式</code>設定視窗。<br><img src="/Blog/2019/05/02/VSCode技巧：設定cmder為主要teminal/cmder_user_settings.jpg" alt="[cmder_user_settings]" title="[cmder_user_settings]"><br>輸入以下設定，存檔後即可。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// C:\\tools\\Cmder換成自己電腦上的cmder路徑，若使用choco install安裝則無須更動</span></div><div class="line"></div><div class="line"><span class="string">"terminal.integrated.shell.windows"</span>: <span class="string">"cmd.exe"</span>,</div><div class="line"><span class="string">"terminal.integrated.env.windows"</span>: &#123;</div><div class="line">    <span class="string">"CMDER_ROOT"</span>: <span class="string">"C:\\tools\\Cmder"</span></div><div class="line">&#125;,</div><div class="line"><span class="string">"terminal.integrated.shellArgs.windows"</span>: [</div><div class="line">    <span class="string">"/k C:\\tools\\Cmder\\vendor\\init.bat"</span></div><div class="line">],</div></pre></td></tr></table></figure><p>筆者建議增加另一個設定，因 vscode 上面的<code>View:Toggle Integrated Terminal</code>預設鍵，預設鍵為<code>Ctrl+` </code>，會衝到 <code>cmder</code>本身的預設快捷鍵。建議更改為別的鍵，筆者建議使用<code>Win+` </code>，更改方式如下：</p><ul><li>使用<code>Ctrl+Shift+P</code>的方式開啟 vscode 內部指令視窗，輸入<code>keyboard</code>，選擇<code>Preferences: Open Keyboard Shortcuts</code>。</li><li>搜尋方式找到<code>View:Toggle Integrated Terminal</code>設定。</li><li>按下<code>Enter</code>方式，跳出設定畫面，按下自己想設定的鍵，筆者環境會按下<code>Win+` </code>後，按下<code>Enter</code>鍵即可完成。<!-- endcontent --><div class="figure figure--fullWidth"><img class="figure-img" src="terminal_keyboard_setting.gif" alt="[terminal_keyboard_setting]"><span class="caption">[terminal_keyboard_setting]</span></div><!-- content --></li></ul><h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>若習慣使用<code>cmder</code>則，以上簡單設定可以在<code>vscode</code>也享有一樣的功能，筆者在此分享給大家。<br>參考</p><ul><li><a href="https://github.com/cmderdev/cmder/wiki/Seamless-VS-Code-Integration" target="_blank" rel="external">https://github.com/cmderdev/cmder/wiki/Seamless-VS-Code-Integration</a></li><li><a href="https://github.com/cmderdev/cmder/issues/1656#issuecomment-366301511" target="_blank" rel="external">https://github.com/cmderdev/cmder/issues/1656#issuecomment-366301511</a></li></ul><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前提情要&quot;&gt;&lt;a href=&quot;#前提情要&quot; class=&quot;headerlink&quot; title=&quot;前提情要&quot;&gt;&lt;/a&gt;前提情要&lt;/h2&gt;&lt;p&gt;這篇主要是筆者因於 windows 環境下，習慣使用&lt;code&gt;cmder&lt;/code&gt;作為主要 terminal，因最近又開始撰寫 vue 專案，使用&lt;code&gt;vscode&lt;/code&gt;作為主要編輯器，因 vscode 本身有提供&lt;code&gt;terminal&lt;/code&gt;介面，不離開編輯器狀況下，可以完成下指令動作。&lt;br&gt;因主要指令視窗開啟後，vscode 會跳出「可以設定預設 terminal」提醒視窗，筆者就來設定將&lt;code&gt;cmder&lt;/code&gt;作為&lt;code&gt;vscode&lt;/code&gt;的主要 terminal。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="vscode" scheme="http://eugenesu0515.github.io/tags/vscode/"/>
+    
+      <category term="terminal" scheme="http://eugenesu0515.github.io/tags/terminal/"/>
+    
+      <category term="cmder" scheme="http://eugenesu0515.github.io/tags/cmder/"/>
+    
+  </entry>
   
   <entry>
     <title>[Windows工具]Keypirinha介紹</title>
@@ -352,9 +376,9 @@
       <category term="vscode" scheme="http://eugenesu0515.github.io/categories/vscode/"/>
     
     
-      <category term="vue" scheme="http://eugenesu0515.github.io/tags/vue/"/>
-    
       <category term="vscode" scheme="http://eugenesu0515.github.io/tags/vscode/"/>
+    
+      <category term="vue" scheme="http://eugenesu0515.github.io/tags/vue/"/>
     
       <category term="vetur" scheme="http://eugenesu0515.github.io/tags/vetur/"/>
     
@@ -406,9 +430,9 @@
       <category term="dotnet core" scheme="http://eugenesu0515.github.io/categories/dotnet-core/"/>
     
     
-      <category term="dotnet core" scheme="http://eugenesu0515.github.io/tags/dotnet-core/"/>
-    
       <category term="vscode" scheme="http://eugenesu0515.github.io/tags/vscode/"/>
+    
+      <category term="dotnet core" scheme="http://eugenesu0515.github.io/tags/dotnet-core/"/>
     
   </entry>
   
